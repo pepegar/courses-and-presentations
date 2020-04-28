@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "http://pepegar.com/course-data-structures-and-programmatic-thinking/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Data Structures and Programmatic Thinking"
 theme = "ananke"
