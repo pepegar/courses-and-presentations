@@ -1,4 +1,4 @@
-source := docs
+source := slides-md
 output := slides
 sources := $(wildcard $(source)/*.md)
 objects := $(patsubst %.md,%.pdf,$(subst $(source),$(output),$(sources)))
@@ -19,7 +19,7 @@ $(output)/%.pdf: $(source)/%.md
 .PHONY : clean
 
 watch:
-	ls docs/*.md | entr make all
+	ls $(source)/*.md | entr make all
 
 clean:
 	rm -f $(output)/*.pdf
