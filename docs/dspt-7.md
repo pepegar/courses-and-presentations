@@ -9,7 +9,6 @@ lang: en
 Data Structures & Programmatic Thinking
 =======================================
 
-https://slides.com/pepegar/dspt-7/live
 
 Plan for today
 ==============

@@ -9,7 +9,6 @@ lang: en
 Data Structures and Programmatic Thinking. Session 12
 =====================================================
 
-https://slides.com/pepegar/dspt-12/live
 
 Plan for today
 ==============
