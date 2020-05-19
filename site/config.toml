@@ -1,4 +1,7 @@
-baseURL = "http://pepegar.com/course-data-structures-and-programmatic-thinking/"
+baseURL = "https://dspt.pepegar.com/"
 languageCode = "en-us"
 title = "Data Structures and Programmatic Thinking"
-theme = "ananke"
+theme = "hugo-tufte"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]

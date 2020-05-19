@@ -21,5 +21,8 @@ $(output)/%.pdf: $(source)/%.md
 watch:
 	ls $(source)/*.md | entr make all
 
+hugo:
+	hugo --source site server -D
+
 clean:
 	rm -f $(output)/*.pdf
