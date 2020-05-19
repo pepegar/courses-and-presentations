@@ -1,0 +1,18 @@
+@font-face {
+  font-family: iosevka;
+  font-style: normal;
+  src: url(../fonts/iosevka.ttf) format('truetype');
+}
+
+.highlight {
+  width: 52.5%;
+}
+
+pre code {
+  width: 97.5%;
+  overflow-x: auto;
+}
+
+code {
+  font-family: iosevka;
+}
