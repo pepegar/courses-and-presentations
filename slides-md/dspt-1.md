@@ -6,207 +6,299 @@ date: 2020-04-20
 lang: en
 ---
 
-Data Structures & Programmatic Thinking
-=======================================
+# About
 
-About the professor
--------------------
+## The Professor
 
-[Pepe García]{style="font-size:1.4em"}
+Pepe García
+
+. . .
 
 jgarciah\@faculty.ie.edu
 
-Ask me anything
+. . .
 
 Tech Lead @ 47deg
 
-Data Structures & Programmatic Thinking
-=======================================
+. . .
 
-About the course
-----------------
+Ask me anything
 
->- [15 sessions]{style="font-size:2.0em"}
->- [11 lectures]{style="font-size:2.0em"}
->- [3 lab sessions]{style="font-size:2.0em"}
->- [2 individual assignments]{style="font-size:2.0em"}
->- [1 final quiz]{style="font-size:2.0em"}
+---
 
-Data Structures & Programmatic Thinking
-=======================================
+# About
 
-Evaluation method
------------------
+## The Course
 
->- [Individual work: 30%]{style="font-size:2.0em"}
->- [Final exam: 20%]{style="font-size:2.0em"}
->- [Class participation: 20%]{style="font-size:2.0em"}
->- [Workgroups: 30%]{style="font-size:2.0em"}
+- 6 sync sessions
 
-Data Structures & Programmatic Thinking
-=======================================
+. . .
 
-Learning Objectives
--------------------
+- 4 async sessions
 
->- Learn What\'s programming
->- Understand data structures
->- Understand how computers execute programs
->- Learn the basics of Python
+. . .
 
-Session structure
-=================
+- 4 assignments (2 individual, 2 group)
 
-- Lecture \~50 mins
-- Guided exercises \~30 mins
+. . .
 
-Plan for today
-==============
+- 1 final exam
+
+---
+
+# About
+
+## Grading
+
+| Criteria            | Score % |
+|:--------------------|:--------|
+| Final Exam          | 20 %    |
+| Individual Work     | 40 %    |
+| Workgroups          | 20 %    |
+| Class Participation | 20 %    |
+
+---
+
+# About
+
+## Grading
+
+We are not applying a grading curve to this course, instead, you'll
+only be graded based on your work.
+
+| Numerical grade | Alpha grade |
+|:----------------|:------------|
+| < 5             | FAIL        |
+| >= 5 < 7        | PASS        |
+| >= 7 < 8        | PROFICIENCY |
+| >= 8 < 9        | EXCELLENCE  |
+| >= 9            | HONORS      |
+
+---
+
+# About
+
+## Participation
+
+Please, raise your hand at any point in class if you want to ask
+something, make an useful comment, or answer a question.  (if remote,
+use Zoom's raise hand feature, so that it's easier to track it)
+
+---
+
+# Learning Objectives
+
+In this course we will build the fundamentals for the rest of
+the courses in the masters that rely on programming.  We will:
+
+. . .
+
+- Learn What's programming
+
+. . .
+
+- Understand how computers execute programs
+
+. . .
+
+- Learn the basics of Python
+
+---
+
+# Plan for this session
 
 - Learn about software
-- Understand what are algorithms
-- Understand what are data structures
 
-What is code?
-=============
+. . .
 
-[https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/]{style="font-size:0.7em"}
+- Understand what are algorithms and data structures
 
+. . .
 
-Programming languages
-=====================
+- Install Anaconda
+
+---
+
+# Language
 
 Throughout this course we will use Python as our programming language,
 but there are many more!
 
+# Language
 
-Programming languages
-=====================
+There are several ways for categorizing programming languages.
 
-  Language     Paradigm          Execution     Purpose
-  ------------ ----------------- ------------- ----------
-  Python       imperative        interpreted   general
-  Java         object oriented   compiled      general
-  Javascript   imperative        interpreted   general
-  Haskell      functional        compiled      general
-  SQL          declarative       interpreted   specific
-  HTML         declarative       interpreted   specific
+## Language classification
 
-Programming languages
-=====================
+| Language   | Paradigm        | Execution   | Purpose |
+|:-----------|:----------------|:------------|:--------|
+| Python     | imperative      | interpreted | general |
+| Java       | object oriented | compiled    | general |
+| Javascript | imperative      | interpreted | general |
+| Haskell    | functional      | compiled    | general |
+| SQL        | declarative     | interpreted | specifi |
+| HTML       | declarative     | interpreted | specifi |
+
+# Language
 
 ## Python
 
-Python is one of the most used languages right now.  Its applications
+Python is one of the most used languages right now.  Its applications
 range from Data Science to Web servers
 
-Programming languages
-=====================
+# How do we write code?
 
-## Java
+---
 
-Java is a very famous language developed by Oracle in the 90s, mostly
-used in enterprise software.
-
-Programming languages
-=====================
-
-How do we write code?
----------------------
+# How do we write code?
 
 Coding is basically putting words together following a programming
 language specification.
 
+---
 
-Programming languages
-=====================
+# How do we write code?
 
-How do we write code?
----------------------
+We can put these words directly in a text file and then execute it
+as a program.
 
-We can put these words directly in a text file and let then execute it
-as a program
+![](./img/code.jpg){height=300px}
 
+---
 
-Programming languages
-=====================
-
-How do we write code?
----------------------
+# How do we write code?
 
 Or we can feed these words directly into the programming language
-console
+console.
+
+---
+
+# Demo
+
+\begin{exampleblock}{Python console}
+Let's see how do code looks in the console!
+\end{exampleblock}
+
+---
+
+# Install Anaconda platform
+
+Now we will install the Anaconda platform in our computers.
+
+1. go to [https://www.anaconda.com/products/individual](https://www.anaconda.com/products/individual)
+2. Go to the bottom of the page, to the **Anaconda Installers** section,
+   and download the graphical installer for the 3.7 version **for your
+   operating system.**
+3. In the installer, when you're given the option to install the
+   PyCharm IDE, or Visual Studio Code, you can ignore it, we're not
+   going to use it.
+
+---
 
 
-How do we code?
-===============
+\begin{exampleblock}{Checkpoint}
+Anybody is lost or has problems installing the software?
+\end{exampleblock}
 
-Using Python console
+---
 
-What is a program?
-==================
+# Programs
 
-[A program is a piece of software with a specific
-task.]{style="font-size:0.9em"}
+---
 
- 
+# Programs
 
-[This task can be something BIG, like handling a nuclear reactor, or
-something small like Ctrl-c/Ctrl-v.]{style="font-size:0.9em"}
+## What is a program?
 
- 
+A program is a piece of software with a specific task.
 
-[There are two main components of programs, algorithms & data
-structures.]{style="font-size:0.9em"}
+. . .
 
-What is an algorithm?
-=====================
+This task can be something **big**, like handling a nuclear reactor, or
+something **small** like Ctrl-c/Ctrl-v.
+
+. . .
+
+There are two main components of programs, **algorithms** & **data structures.**
+
+---
+
+# Algorithms
+
+---
+
+# Algorithms
+
+## What is an algorithm?
+
+. . .
 
 An algorithm is a sequence of steps that guide the computer in how to
 solve a problem
 
+---
 
-Algorithms
-==========
+# Algorithms
+
+![](./img/SFF-1.gif){ height=250px }
+
+[link to the video](https://www.youtube.com/watch?v=k0xgjUhEG3U)
+
+---
+
+# Algorithms
+
+What's wrong with this algorithm? why did Wolowitz need to fix it?
+
+. . .
+
+There was a **bug**, an infinite loop
+
+---
+
+# Algorithms
+
+![](./img/SFF-2.gif){ height=250px }
 
 
-Algorithms
-==========
+---
 
-What\'s wrong with this algorithm? why did Wolowitz needed to fix it?
+# Algorithms
 
-There was an infinite loop, a **bug**
+## What other cases of bugs do we know?
 
-Algorithms
-==========
+---
 
+# Algorithms
 
-[What happens when an algorithm doesn\'t work correctly?]{style="font-size:1.0em"}
-==================================================================================
-
-Knight Capital Group
-====================
-
+![](./img/knight.png)
 
 [https://www.bloomberg.com/news/articles/2012-08-02/knight-shows-how-to-lose-440-million-in-30-minutes](https://www.bloomberg.com/news/articles/2012-08-02/knight-shows-how-to-lose-440-million-in-30-minutes)
 
-[What is a data structure?]{style="font-size:0.9em"}
-====================================================
+---
 
-Data structures are collections of values, relationships between them,
-and operations that can work on them
+# Spyder
 
+Spyder is the editor we will use in this course for programming in
+python, let's investigate it for a bit!
 
-Example algorithm
-=================
+# Recap
 
-Readings
-========
+. . .
 
-If you\'re interested, here are some recommended readings:
+- We'll use Python for learning programming in this course.
 
-What Is Code:
-[[https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/]{style="font-size:0.7em"}](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/)
+. . .
 
-Python for Everybody:
-[[https://www.py4e.com]{style="font-size:0.7em"}](https://www.py4e.com)
+- Algorithms, like cooking recipes, will guide our program to perform what we want.
+
+. . .
+
+- We'll use the Spyder editor to program in Python
+
+# Recommended reading
+
+**What Is Code** is a great essay by Paul Ford. (it's a bit long, you
+don't need to read it for tomorrow)
+
+[https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/)

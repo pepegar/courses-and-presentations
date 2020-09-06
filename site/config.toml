@@ -3,5 +3,9 @@ languageCode = "en-us"
 title = "Data Structures and Programmatic Thinking"
 theme = "hugo-tufte"
 
+pygmentsstyle = "tango"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
