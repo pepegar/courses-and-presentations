@@ -1,161 +1,283 @@
 ---
 title: Data Structures & Programmatic Thinking
-author: Pepe García
+author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
-date: 2020-04-20
+date: 2020-09-08
 lang: en
 ---
 
-Data Structures & Programmatic Thinking
-=======================================
+## Plan for this session
 
+. . .
 
-Plan for this session
-=====================
+- Python basic datatypes
 
--   Learn about hardware
--   Install Anaconda
--   Try Spyder editor
--   *troubleshooting*
--   Break
+. . .
 
-Hardware: building blocks
-=========================
+- Variables
 
-Transistors
-===========
+. . .
 
-Basic component of computers
+- Operators
 
- 
+. . .
 
-No moving parts (solid state)
+- Basic functions
 
- 
+# Datatypes
 
-Controls current flow
+Datatypes tell Python how we want to use the data.  There are several
+primitive data types in Python such as **bool**, **int**, **str**,
+**float**.
 
+# Datatypes
 
-Chips
-=====
+## Integers
 
-Millions of transistors grouped together
+Integers (or ints) represent whole numbers.  We create them by using
+their numeric representation directly.
 
- 
+```python
+1
+234
+432432
+```
 
-Moore\'s law
+. . .
 
- 
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
-Pins make it possible to plug them to sockets
+---
 
+# Datatypes
 
-CPU
-===
+## Floating point numbers
 
-Brains of the computer
+Floats represent numbers that have a fractional part.  We use a dot to
+separate the integer and fractional parts:
 
- 
+```python
+3.14
+1.0
+33.33
+```
 
-Moore\'s law debunked
+. . .
 
- 
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
-More computing power is achieved through more cores
+---
 
- 
+# Datatypes
 
-Speed measured in hertz
+## Strings
 
+Strings are used for textual representation. They can be created using
+either double or simple quotes.
 
-RAM
-===
+```python
+'this is a string'
+"this is another string"
+```
 
-RAM is the short term memory of a computer
+. . .
 
- 
+\begin{exampleblock}{Demo}
+Why can one use either double or single quotes? why just not agree on one of them?
+\end{exampleblock}
 
-Think of it like a big shared blackboard
+---
 
- 
+# Datatypes
 
-Divided in addresses
+## Booleans
 
- 
+Booleans represent truthiness. There are only two values in for the bool
+type in Python: True and False
 
-Not persistent
+```python
+True
+False
+```
 
- 
+. . .
 
-Fast
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
+---
 
-HDD / SSD
-=========
+# Getting the type of a value
 
-Hard Disk Drives or Solid State Drives are the long term storage of the
-computer
+We can always get the type of a value using the **type(value)**
+function
 
- 
+```python
+type("patata")
+```
 
-Persistent
+---
 
- 
+# Getting the type of a value
 
-Slower than RAM
+\begin{exampleblock}{Practice}
 
- 
+Inside Spyder, check what's the type of the following expressions:
 
-Higher capacity than RAM
+\begin{itemize}
+\item \textbf{\texttt{"there is some text here"}}
+\item \textbf{\texttt{1}}
+\item \textbf{\texttt{True}}
+\item \textbf{\texttt{44.4}}
+\item \textbf{\texttt{'true'}}
+\item \textbf{\texttt{'False'}}
+\item \textbf{\texttt{2}}
+\item \textbf{\texttt{'33.3'}}
+\end{itemize}
 
+\end{exampleblock}
 
-Motherboard
-===========
+---
 
-The motherboard ties all hardware components together
+# Operators
 
- 
+Operators are symbols in the language that perform different kinds of
+computations on values
 
-Lets them communicate
+They're **binary**, they will operate on two values.
 
- 
+# Arithmetic Operators
 
-RAM goes in the blue slots in the right, CPU in the black square socket
+| symbol   | meaning          |
+|:---------|:-----------------|
+| **`+`**  | sum              |
+| **`-`**  | substraction     |
+| **`*`**  | multiplication   |
+| **`/`**  | division         |
+| **`**`** | exponentiation   |
+| **`//`** | floored division |
+| **`%`**  | modulus          |
 
+# Arithmetic Operators
 
-Operating System
-================
+## Rules of precedence
 
+>- Parentheses
+>- Exponentiation
+>- Multiplication/Division
+>- Sum/Substraction
+>- when operators have the same precedence, evaluate left to right
 
-Operating System
-================
+. . .
 
-The OS is the most foundational program running in a computer
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
- 
+# String operators
 
-It controls the hardware and gives other programs running in the
-computer access to hardware and resources
+Sum and multiplication operators work on strings too.  They're used to
+concatenate and multiply strings, respectively.
 
-Installing Anaconda
-===================
+. . .
 
--   https://www.anaconda.com/download
--   Download the 3.7 version for your OS
--   Install it
--   Open \"Anaconda Navigator\"
--   Launch Spyder Editor
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
-Trying Spyder
-=============
 
-Spyder is the text editor we\'re going to use to develop our Python
-programs
+# Variables
 
-Trying Spyder
-=============
+Variables are names that point to values in Python.  We declare them
+using the assignment operator (**`=`**).
 
-Download the \"try\_spyder.py\" file from the course files folder
+```python
+variable_name = "value"
+```
 
-Break!
-======
+# Variables
+
+\begin{block}{Naming variables}
+It's important to be as descriptive as possible when naming variables
+
+There are some naming rules we should obey
+\end{block}
+
+. . .
+
+\begin{alertblock}{Rules}
+\begin{itemize}
+\item variable names can't start with a number
+\item variable names can't contain special characters such as \textbf{!}, \textbf{@}, \textbf{.}
+\item Can't be one of the reserved words
+\end{itemize}
+\end{alertblock}
+
+# Variables
+
+## Reserved words
+
+|            |           |          |            |         |
+|------------|-----------|----------|------------|---------|
+| `and`      | `del`     | `from`   | `None`     | `True`  |
+| `as`       | `elif`    | `global` | `nonlocal` | `try`   |
+| `assert`   | `else`    | `if`     | `not`      | `while` |
+| `break`    | `except`  | `import` | `or`       | `with`  |
+| `class`    | `False`   | `in`     | `pass`     | `yield` |
+| `continue` | `finally` | `is`     | `raise`    |         |
+| `def`      | `for`     | `lambda` | `return`   |         |
+
+# Variables
+
+## Mutability
+
+In Python variables are mutable. This means that we can change their
+value at any time
+
+```python
+name = "Pepe"
+print(name)
+
+name = "Jose"
+print(name)
+```
+
+# Converting values
+
+There are some times when we need to convert a value from one type to
+another.
+
+We use the **int()**, **bool()**, **str()**, and **float()** functions for that
+
+. . .
+
+```python
+int('23')
+bool(1)
+bool(0)
+str(True)
+float("3.2")
+```
+
+# Printing output
+
+One can print output using the **print()** function
+
+# User input
+
+There is a handy function **input()** that allows us to capture input
+from the user
+
+```python
+name = input("Tell me your name: ")
+
+print("hello, " + name)
+```
+
+# Recap
+
+>- Datatypes (int, float, bool, str)
+>- Variables (naming, mutability)
+>- Operators (arithmetic, precedence, string operators)
+>- Converting values
+>- User input
