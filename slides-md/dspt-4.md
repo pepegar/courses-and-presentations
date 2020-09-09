@@ -274,34 +274,3 @@ It's a long book, don't try to read it cover to cover but instead pick up the
 chapters that catch your eye from the index.
 
 You can start reading the chapters on basics, functions, and control flow.
-
-# Exercises
-
-1. Create a function `weekly_commute_time` that asks the user their daily
-   commute time and returns their weekly time spent commuting.
-
-2. What do the following expressions return?
-   - `True or 11 > 34`
-   - `False and (1 == 1)`
-   - `(77 // 11) > 6 and False`
-
-3. Create a function `area_triangle` that takes the base and height of a
-   triangle and returns its area
-
-   (cont)
-
-# Exercises (Cont)
-
-p4. Create function `area_triangle_rectangle` that takes the base, height, and
-   the kind of shape and calculates its area.  It should work for both triangles
-   and rectangles.
-
-5. Create a function `im_in_love` that takes a weekday number (from monday to
-   friday), and returns how that weekday is (according to The Cure!):
-
-```
-I don't care if Monday's blue
-Tuesday's grey and Wednesday too
-Thursday I don't care about you
-It's Friday, I'm in love
-```
