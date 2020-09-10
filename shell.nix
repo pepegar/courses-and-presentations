@@ -6,5 +6,7 @@ pkgs.mkShell {
     pkgs.pandoc
     pkgs.entr
     pkgs.hugo
+    pkgs.haskellPackages.pandoc-crossref
+    pkgs.texlive.combined.scheme-full
   ];
 }
