@@ -6,10 +6,7 @@ objects := $(patsubst %.md,%.pdf,$(subst $(source),$(output),$(sources)))
 all: $(objects)
 
 session5:
-	@pdflatex handouts/sample-handout
-	@bibtex handouts/sample-handout
-	@pdflatex handouts/sample-handout
-	@pdflatex handouts/sample-handout
+	make --directory=handouts session5
 
 $(output)/%.pdf: $(source)/%.md
 	pandoc \

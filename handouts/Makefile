@@ -1,0 +1,5 @@
+session5:
+	@pdflatex sample-handout
+	@bibtex sample-handout
+	@pdflatex sample-handout
+	@pdflatex sample-handout
