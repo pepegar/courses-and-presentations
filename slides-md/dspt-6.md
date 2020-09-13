@@ -1,104 +1,346 @@
 ---
-title: Data Structures & Programmatic Thinking
-author: Pepe García
+title: Data Structures and Programmatic Thinking
+subtitle: Session 6
+author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
-date: 2020-04-20
+date: 2020-07-27
 lang: en
 ---
 
-Data Structures & Programmatic Thinking
-=======================================
+# Codecademy
 
+You have been invited to **Codecademy**.  Please follow the link in
+your email and create an account.  There will be some sessions in
+which you'll be required to get something done in Codecademy, but for
+now, explore and see if there's any course that catches your eye.
 
-Plan for today
-==============
+# Plan for today
 
-Mutability
+>- review last day exercises
+>- mutability
+>- lists
+>- iteration
 
-Iteration
+# Last session exercises
 
-Mutability
-==========
+1. Create a function `weekly_commute_time` that asks the user their daily
+   commute time and returns their weekly time spent commuting.
+
+2. What do the following expressions return?
+   - `True or 11 > 34`
+   - `False and (1 == 1)`
+   - `(77 // 11) > 6 and False`
+
+5. Create a function `im_in_love` that takes a weekday number (from monday to
+   friday), and returns how that weekday is (according to The Cure!):
+
+```
+I don't care if Monday's blue
+Tuesday's grey and Wednesday too
+Thursday I don't care about you
+It's Friday, I'm in love
+```
+
+# Mutability
 
 Mutability is a feature of variables in most programming languages.  It
 means that variables can be updated to newer values.
 
-``` {.stylus}
+```python
 x = 1
 x = x * 3
 
 print(x)
 ```
 
-Mutability
-==========
+. . .
 
-Iteration
-=========
+## Demo
+
+Let's refresh how we can change the value of a variable in spyder.
+
+# Iteration
 
 Iteration is the act of repeating a process.  In Python we express
 iteration with the **while** statement
 
-While
-=====
-
-1\. Evaluate the condition
-
-2\. If the condition is False, exit while and go to next statement
-
-3\. If condition is true, execute body.  Then go to step 1.
-
-While
-=====
-
-Stopping a loop
-===============
-
-You can always stop a loop using the break keyword
+. . .
 
 ```python
-while True:
-    if im_bored_of_iterating:
-        break
-    else:
-        print("i'm iterating!")
-     
+while <condition>:
+    <body>
 ```
 
-Infinite loops
-==============
+# While
 
-Infinite loops are loops whose condition never evaluates to False.  This
-means that they\'ll run forever (unless we break them)
+```python
+while <condition>:
+    <body>
+```
 
-``` {.stylus}
-+ Create a function that prints the numbers 1 to 50 (using iteration)
+## How does it work?
 
-+ Create a program that prints multiplication tables from 1 to 10
+. . .
 
-+ Create a function ~pyramid~ that receives an integer ~n~ as
-  parameter and prints ~n~ lines of the following pattern:
+1. Evaluate the condition
 
-  *
-  **
-  ***
-  ****
-  *****
+. . .
 
-+ Create a function ~inverted_piramid~ that writes the pyramid of
+2. If the condition is False, exit while and go to next statement
+
+. . .
+
+3. If condition is true, execute body.  Then go to step 1.
+
+. . .
+
+## Demo
+
+Let's see how does the **while** loop work.  Let's create a function that
+prints the numbers 1 to 50 (using iteration)
+
+# Practice
+
+## exercise
+
+Create a function `pyramid` that receives an integer `n` as
+parameter and prints `n` lines of the following pattern:
+
+```
+*
+**
+***
+****
+*****
+```
+
+# Lists
+
+Lists are sequences of values
+
+
+# Constructing Lists
+
+We construct lists with the brackets **[]** syntax.  We surround
+everything that we want to include in the list with **square
+brackets** and separate elements with **commas**:
+
+```python
+[1, 2, 3, 4, 5]
+["hello", "dolly"]
+[]
+[1, "hello", 2, "dolly", 3]
+```
+
+. . .
+
+## Demo
+
+Let's create some lists and see the type of those values.
+
+# List length
+
+We can get the length of a list using the **len** function:
+
+```python
+names = ["Pepe", "Antonio"]
+print(len(names)) # will print 2
+```
+
+# Accessing list elements
+
+We use **square brackets** to access elements by their **index**.
+ 
+\begin{alertblock}{Indices}
+\textbf{indices} in lists start by \textbf{0}, not 1.
+\end{alertblock}
+
+```python
+words = ["hello", "dolly"]
+words[0]
+# "hello"
+words[1]
+# "dolly"
+```
+
+. . .
+
+## Demo
+
+# Practice
+
+## Exercise
+
+Create a function that receives a list as a parameter and prints each
+element of the list individually.
+
+# Operators on lists
+
+As with strings, **+** and **\*** operators work with lists too!
+
+. . .
+
+## Demo
+
+# Mutating lists
+
+Lists are mutable values, and they provide functionality to add, delete,
+and update elements
+
+# Updating elements in the list
+
+To update an element inside the list, we use a syntax similar to the one
+for declaring variables, but using the brackets and the index we refer
+to.
+
+```python
+numbers = [1,2,4]
+numbers[2] = 3
+print(numbers) # prints [1,2,3]
+```
+
+. . .
+
+## Demo
+
+# Appending elements to the list
+
+To add a new element to the end of the list we use the append() method
+on it.
+
+```python
+numbers = [1,2,3]
+numbers.append(4)
+print(numbers) # prints [1,2,3,4]
+```
+
+. . .
+
+## Demo
+
+# Inserting elements in the list
+
+There\'s an alternative way of adding new elements to the list, and
+it\'s using the insert() method on it:
+
+```python
+words = ["hello","my","friends"]
+words.insert(2, "dear")
+print(words) # prints ["hello", "my", "dear", "friends"]
+```
+
+The difference between this and append is that with insert we can choose
+where to put it by using the target index
+
+. . .
+
+## Demo
+
+# Removing elements from the list
+
+In order to remove an element from a list, we should use the .pop()
+method, and pass the index of the element we want to remove
+
+```python
+words = ["hello","my","friend"]
+words.pop(1)
+print(words)
+```
+
+. . .
+
+## Demo
+
+# For loops
+
+For loops are simpler than while loops. They iterate over elements in a
+list.  They loop once for every element in the list.
+
+. . .
+
+```python
+for <iteration_variable> in <list>:
+    <body>
+```
+
+In each iteration, we will have a new value for the `iteration_variable`.
+
+. . .
+
+## Demo
+
+# Practice
+
+## Exercise
+
+create a function named **to_string** that receives a list and returns
+a string with all elements of the list concatenated.  Don't use the
+`join` function.
+
+# Recap
+
+. . .
+
+We will use **while** loops for iterating given a boolean condition.
+
+. . .
+
+Use **lists** to store collections of values
+
+. . .
+
+Use mutation operations on list to append, remove, or update elements in
+the list
+
+. . .
+
+Use for loops to iterate over elements in the list
+
+# Exercises
+
+- Create a function that returns a list of numbers from 0 to 500
+
+- Create a function that takes a list of numbers (you can use the one
+   you created in the previous exercise) and returns the sum of all of
+   them
+
+- Investigate the `range()` function.  After you've used it, create a
+   function that receives a number as parameter and prints all numbers
+   from it to zero (using a for loop).
+
+- Create a function that takes a list of numbers and returns the
+   maximum value among them
+
+- Create a function that takes a list of numbers and returns the
+   minimum value among them
+
+# Exercises (Cont)
+
+- Create a function that prints the numbers 1 to 50 (using iteration)
+
+- Create a program that prints multiplication tables from 1 to 10
+
+- Create a function `inverted_piramid` that writes the pyramid of
   stars in an inverted fashion.
 
-  *****
-  ****
-  ***
-  **
-  *
+```
+*****
+****
+***
+**
+*
+```
 
-+ Create a function ~multiplicate~ that takes two integers (~a~ and
-  ~b~, for example) and returns a times b.  Do not use the ~*~
+- Create a function `multiplicate` that takes two integers (`a` and
+  `b`, for example) and returns a times b.  Do not use the `*`
   operator.
 
-+ Create a function ~exponentiate~ that takes two arguments ~base~
-  and ~exponent~ and raises ~base~ to the ~exponent~ power.  Do not
-  use the exponentiation operator.
-```
+- Create a function `exponentiate` that takes two arguments `base`
+  and `exponent` and raises `base` to the `exponent` power.  Do not
+  use the `^` operator.
+
+# Recommended literature
+
+<https://www.py4e.com/html3/05-iterations>
+
+<https://www.py4e.com/lessons/lists>
