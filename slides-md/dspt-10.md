@@ -1,191 +1,223 @@
 ---
 title: Data Structures & Programmatic Thinking
+subtitle: Session 10
 author: Pepe García
 email: jgarciah@faculty.ie.edu
-date: 2020-04-20
+date: 2020-09-18
 lang: en
 ---
 
-Data Structures & Programmatic Thinking
-=======================================
+# Mutating lists
 
+Lists are mutable values, and they provide functionality to add, delete,
+and update elements
 
-Plan for this session
-=====================
+# Updating elements in the list
 
--   Learn about handling files
-
-Reading files
-=============
+To update an element inside the list, we use a syntax similar to the one
+for declaring variables, but using the brackets and the index we refer
+to.
 
 ```python
-file = open("file_path")
-
-for line in file:
-    #do something with line
-    pass
+numbers = [1,2,4]
+numbers[2] = 3
+print(numbers) # prints [1,2,3]
 ```
 
-Reading files
-=============
+. . .
 
--   create a text file
--   read all its lines
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
-Interlude: with
-===============
+# Appending elements to the list
 
-Every time we use files we need to **close()** the file after use.  Not
-closing the file would end up in an unexpected program crash.
+To add a new element to the end of the list we use the append() method
+on it.
 
 ```python
-fh = open("file.txt")
-# do whatever with the file here
-fh.close()
+numbers = [1,2,3]
+numbers.append(4)
+print(numbers) # prints [1,2,3,4]
 ```
 
-Interlude: with
-===============
+. . .
 
-Rewriting our previous example to use **with**
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
-Interlude: with
-===============
+# Inserting elements in the list
 
-In order to avoid this, Python provides the **with** keyword.  Whatever
-we pass to **with** will be closed after the body.
+There\'s an alternative way of adding new elements to the list, and
+it\'s using the insert() method on it:
 
 ```python
-with open("file.txt") as fh:
-    pass # do whatever with the file
+words = ["hello","my","friends"]
+words.insert(2, "dear")
+print(words) # prints ["hello", "my", "dear", "friends"]
 ```
 
-Writing files
-=============
+The difference between this and append is that with insert we can choose
+where to put it by using the target index
 
-We can write to files using a similar approach
+. . .
+
+\begin{exampleblock}{Demo}
+\end{exampleblock}
+
+# Removing elements from the list
+
+In order to remove an element from a list, we should use the .pop()
+method, and pass the index of the element we want to remove
 
 ```python
-with open("file.txt", "w") as f:
-    f.write("this content will be written to the file!")
+words = ["hello","my","friend"]
+words.pop(1)
+print(words)
 ```
 
-Writing files. modes
-====================
+. . .
 
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
-When opening a file, we can choose in which **mode** we open it
+# For loops
 
-CSV files
-=========
+For loops are simpler than while loops. They iterate over elements in a
+list.  They loop once for every element in the list.
 
-Python comes with a **CSV** library that we can use out of the box.  We
-use it by **importing** it.  **Imports** are commonly added at the top
-of the file.
+. . .
 
 ```python
-import csv
+for <iteration_variable> in <list>:
+    <body>
 ```
 
-CSV files
-=========
+In each iteration, we will have a new value for the **`iteration_variable`**.
 
-The **csv** library is based on the idea of readers and writers.  One
-can read all lines in a file like so:
+. . .
+
+\begin{exampleblock}{Demo}
+Let's see an example for adding all numbers in a list
+\end{exampleblock}
+
+# Practice
+
+##
+
+Create a function **`to_string`** that receives a list of strings,
+concatenates all of them and returns it as a single string.
+
+# Checkpoint
+
+\begin{exampleblock}{Checkpoint}
+Is everybody following so far?  Is there any question, comment?
+\end{exampleblock}
+
+# Dictionaries
+
+Dictionaries are another kind of collection in Python.  Dictionaries 
+map keys to values.
+
+# Creating dictionaries
+
+We use curly brackets **{}** to declare dictionaries.
 
 ```python
-with open("file.csv") as f:
-    reader = csv.reader(f)
-    for line in reader:
-        print(line)  #line will be a list here 
+translations = {
+    "es": "Hola!",
+    "it": "Ciao!",
+    "en": "Hello!"
+}
 ```
 
-first we open the file normally
+colon for separating key and value
 
-Then we create a reader using **csv.reader()**
+comma for separating entries
 
-Finally, we operate with the reader
+# Creating dictionaries
 
-CSV files
-=========
-
-writing is not very different from reading:
+We can also create empty dictionaries
 
 ```python
-lines = [
-  ["asdf", "qwer"],
-  ["hello", "world"]
-]
-
-with open("file.csv", "a") as f:
-    writer = csv.writer(f)
-    for line in lines:
-        writer.writerow(line)
+translations = {}
 ```
 
-First we need some data to put in the csv file
+# Creating dictionaries
 
-Then we open the file with the append mode
+# Adding elements
 
-Later, we create a **csv.writer**
-
-Finally, we can use the **writer.writerow()** method to add stuff to the
-file
-
-CSV files. Dictionaries
-=======================
-
-We can use specific writers for dictionaries!
+We add elements to dictionaries given their specific index:
 
 ```python
-beatles = [
-    {"name": "John", "instrument": "voice"},
-    {"name": "Paul", "instrument": "guitar"},
-    {"name": "George", "instrument": "bass"},
-    {"name": "Ringo", "instrument": "drums"}
-]
-
-with open("beatles.csv", "w") as my_file:
-    writer = csv.DictWriter(my_file, ["name", "instrument"])
-    writer.writeheader()
-    for beatle in beatles:
-        writer.writerow(beatle)
+translations = {}
+translations["en"] = "Hello"
+translations["it"] = "Ciao"
+translations["es"] = "Hola"
 ```
 
-First we need some data to put in the csv file
+# Updating elements
 
-Then we open the file with the append mode
-
-Later, we create a **csv.DictWriter**
-
-Finally, we can use the **writer.writerow()** or
-**writer.writeheader()** method to add stuff
-
-CSV files. Dictionaries
-=======================
-
-We can use specific readers too
+we always can change a value in the dictionary by re-assigning the key
 
 ```python
-with open("beatles.csv") as my_file:
-    reader = csv.DictReader(my_file)
-    for beatle in reader:
-        print(beatle["name"] + " -> " + beatle["instrument"])
+translations = {}
+translations["en"] = "Hello"
+translations["en"] = "WHATUP!"
 ```
 
-Then we open the file with the read mode (default)
+# Updating elements
 
-Later, we create a **csv.DictReader**
+# Deleting elements
 
-Each element in the reader will be a dictionary already
-
-Exercises
-=========
+We can delete an element of the dictionary using the **pop** method
 
 ```python
-1. Without using the csv library, create a function named 
-   parse for converting from CSV to a lists of lists.
-  
-2. Without using the csv library, create a function named
-   to_csv for converting that list of lists to CSV.
+translations = {}
+translations["en"] = "Hello"
+translations.pop("en")
+```
+
+# Deleting elements
+
+# Getting all keys or values
+
+We can allways get all **keys** or **values** from the dict as a list
+using either the **.keys()** or **.values()** method
+
+```python
+users = {
+  1: "Pepe",
+  22: "Peter",
+  44143: "Johnny",
+  2: "Chuck"
+}
+
+users.keys()
+users.values()
+```
+
+# Getting all keys or values
+
+# for loops
+
+In the same way we used **for** loops to iterate over elements of a
+list, we can use them to iterate over elements of a dictionary.
+
+ 
+
+The difference is that, with dictionaries, the **iteration variable**
+will represent the **current key**, not the **current value**.
+
+# for loops
+
+```python
+band = {
+  "johnny": "plays drums",
+  "joey": "plays guitar",
+  "markee": "sings",
+  "dee-dee": "plays bass-guitar"
+}
+
+for member in band:
+  print(member + " " + band[member] + " in The Ramones")
 ```
