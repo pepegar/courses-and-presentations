@@ -8,5 +8,6 @@ pkgs.mkShell {
     pkgs.hugo
     pkgs.haskellPackages.pandoc-crossref
     pkgs.texlive.combined.scheme-full
+    pkgs.python38
   ];
 }
