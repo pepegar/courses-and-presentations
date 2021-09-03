@@ -22,10 +22,3 @@ jobs:
 
     - name: Build
       run: hugo --gc --minify --cleanDestinationDir --source site
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2.4.0
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./site/public

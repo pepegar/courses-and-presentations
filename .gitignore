@@ -6,3 +6,5 @@ handouts/*.bbl
 handouts/*.blg
 handouts/*.log
 handouts/*.out
+
+.direnv
