@@ -244,11 +244,9 @@ problem
 
 # Algorithms
 
-![](./img/SFF-1.gif){ height=250px }
-
 [link to the video](https://www.youtube.com/watch?v=k0xgjUhEG3U)
 
----
+![](./img/SFF-1.gif){ height=250px }
 
 # Algorithms
 

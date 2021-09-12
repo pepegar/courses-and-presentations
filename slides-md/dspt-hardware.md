@@ -53,18 +53,12 @@ email: jgarciah@faculty.ie.edu
 
 :::
 
-# Hardware
+# HDD / SSD
 
-## HDD / SSD
-
-Hard Disk Drives or Solid State Drives are the long term storage of the
-computer
-
-Persistent
-
-Slower than RAM
-
-Higher capacity than RAM
+>- Hard Disk Drives or Solid State Drives are the long term storage of the computer
+>- Persistent
+>- Slower than RAM
+>- Higher capacity than RAM
 
 
 # Development Environment
@@ -74,5 +68,9 @@ Higher capacity than RAM
 # Spyder
 
 ![](./img/spyder.png)
+
+# Spyder
+
+Spyder is the editor we're going to use to develop Python programs.
 
 # Review
