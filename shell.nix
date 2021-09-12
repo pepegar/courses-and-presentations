@@ -9,5 +9,6 @@ pkgs.mkShell {
     pkgs.haskellPackages.pandoc-crossref
     pkgs.texlive.combined.scheme-full
     pkgs.python38
+    pkgs.gnumake
   ];
 }

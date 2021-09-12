@@ -5,15 +5,11 @@ objects := $(patsubst %.md,%.pdf,$(subst $(source),$(output),$(sources)))
 
 all: $(objects)
 
-session5:
-	make --directory=handouts session5
-
 $(output)/%.pdf: $(source)/%.md
 	pandoc \
-		--pdf-engine=xelatex	 \
 		--variable monofont="PragmataPro Mono" \
 		--variable fontsize=12pt \
-		--variable theme=Madrid \
+		--variable theme=Copenhagen \
 		-f markdown $< \
 		-t beamer \
 		--highlight-style tango \

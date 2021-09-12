@@ -8,3 +8,4 @@ handouts/*.log
 handouts/*.out
 
 .direnv
+.DS_Store
