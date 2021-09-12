@@ -277,13 +277,6 @@ There was a **bug**, an infinite loop
 
 [https://www.bloomberg.com/news/articles/2012-08-02/knight-shows-how-to-lose-440-million-in-30-minutes](https://www.bloomberg.com/news/articles/2012-08-02/knight-shows-how-to-lose-440-million-in-30-minutes)
 
----
-
-# Spyder
-
-Spyder is the editor we will use in this course for programming in python, let's
-investigate it for a bit!
-
 # Recap
 
 . . .
@@ -294,10 +287,6 @@ investigate it for a bit!
 
 - Algorithms, like cooking recipes, will guide our program to perform what we
   want.
-
-. . .
-
-- We'll use the Spyder editor to program in Python
 
 # Recommended reading
 
