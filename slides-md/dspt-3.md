@@ -1,44 +1,60 @@
 ---
 title: Data Structures & Programmatic Thinking
-author: Pepe García
+subtitle: Session 3
+author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
-date: 2020-04-20
-lang: en
 ---
 
-Data Structures & Programmatic Thinking
-=======================================
+## Plan for this session
 
+. . .
 
-Plan for today
-==============
+- Python basic datatypes
 
--   Python basic datatypes
+. . .
 
--   variables
+- Variables
 
--   operators
+. . .
 
-Datatypes
-=========
+- Operators
+
+. . .
+
+- Basic functions
+
+# Datatypes
 
 Datatypes tell Python how we want to use the data.  There are several
-primitive data types in Python such as bool, int, str, float.
+primitive data types in Python such as **bool**, **int**, **str**,
+**float**.
 
-Integers
-========
+# Datatypes
 
-Integers (or ints) represent whole numbers without decimal parts.  We
-create them by using their numeric representation directly
+## Integers
 
-Integers
-========
+Integers (or ints) represent whole numbers.  We create them by using
+their numeric representation directly.
 
-Floating point numbers
-======================
+```python
+1
+234
+432432
+```
 
-floats represent numbers that have a fractional part.  We use a dot to
-separate the integer and fractional parts
+. . .
+
+\begin{exampleblock}{Demo}
+\end{exampleblock}
+
+---
+
+# Datatypes
+
+## Floating point numbers
+
+Floats represent numbers that have a fractional part.  We use a dot to
+separate the integer and fractional parts:
 
 ```python
 3.14
@@ -46,11 +62,16 @@ separate the integer and fractional parts
 33.33
 ```
 
-Floating point numbers
-======================
+. . .
 
-Strings
-=======
+\begin{exampleblock}{Demo}
+\end{exampleblock}
+
+---
+
+# Datatypes
+
+## Strings
 
 Strings are used for textual representation. They can be created using
 either double or simple quotes.
@@ -60,11 +81,17 @@ either double or simple quotes.
 "this is another string"
 ```
 
-Strings
-=======
+. . .
 
-Booleans
-========
+\begin{exampleblock}{Demo}
+Why can one use either double or single quotes? why just not agree on one of them?
+\end{exampleblock}
+
+---
+
+# Datatypes
+
+## Booleans
 
 Booleans represent truthiness. There are only two values in for the bool
 type in Python: True and False
@@ -74,122 +101,134 @@ True
 False
 ```
 
-Booleans
-========
+. . .
 
-Getting the type of a value
-===========================
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
-We can always ask ask a value for its type using the **type(value)**
+---
+
+# Getting the type of a value
+
+We can always get the type of a value using the **type(value)**
 function
 
 ```python
 type("patata")
 ```
 
-Getting the type of a value
-===========================
+---
 
-Inside Spyder, check what\'s the type of the following expressions:
+# Getting the type of a value
 
-```python
-"there is some text here"
-1
-True
-44.4
-'true'
-'False'
-2
-'33.3'
-```
+\begin{exampleblock}{Practice}
 
-Operators
-=========
+Inside Spyder, check what's the type of the following expressions:
+
+\begin{itemize}
+\item \textbf{\texttt{"there is some text here"}}
+\item \textbf{\texttt{1}}
+\item \textbf{\texttt{True}}
+\item \textbf{\texttt{44.4}}
+\item \textbf{\texttt{'true'}}
+\item \textbf{\texttt{'False'}}
+\item \textbf{\texttt{2}}
+\item \textbf{\texttt{'33.3'}}
+\end{itemize}
+
+\end{exampleblock}
+
+---
+
+# Operators
 
 Operators are symbols in the language that perform different kinds of
 computations on values
 
-They\'re binary
+They're **binary**, they will operate on two values.
 
-Arithmetic Operators
-====================
+# Arithmetic Operators
 
-  symbol   meaning
-  -------- ------------------
-  \+       sum
-  \-       substraction
-  \*       multiplication
-  /        division
-  \*\*     exponentiation
-  //       floored division
-  \%       modulus
+| symbol   | meaning          |
+| :------- | :--------------- |
+| **`+`**  | sum              |
+| **`-`**  | substraction     |
+| **`*`**  | multiplication   |
+| **`/`**  | division         |
+| **`**`** | exponentiation   |
+| **`//`** | floored division |
+| **`%`**  | modulus          |
 
-Arithmetic Operators
-====================
+# Arithmetic Operators
 
-Rules of precedence
-===================
+## Rules of precedence
 
--   Parentheses
--   Exponentiation
--   Multiplication/Division
--   Sum/Substraction
--   when operators have the same precedence, evaluate left to right
+>- Parentheses
+>- Exponentiation
+>- Multiplication/Division
+>- Sum/Substraction
+>- when operators have the same precedence, evaluate left to right
 
-Rules of precedence
-===================
+. . .
 
-String operators
-================
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
-sum and multiplication operators work on strings too.  They\'re used to
-concatenate and multiply strings, respectively
+# String operators
 
-String operators
-================
+Sum and multiplication operators work on strings too.  They're used to
+concatenate and multiply strings, respectively.
 
-Show some examples of string concatenation & multiplication
+. . .
 
-Variables
-=========
+\begin{exampleblock}{Demo}
+\end{exampleblock}
 
-Variables are names that point to values in Python.
 
-Variables
-=========
+# Variables
 
-Naming variables
-================
+Variables are names that point to values in Python.  We declare them
+using the assignment operator (**`=`**).
 
-It\'s important to be as descriptive as possible when naming variables
+```python
+variable_name = "value"
+```
+
+# Variables
+
+\begin{block}{Naming variables}
+It's important to be as descriptive as possible when naming variables
 
 There are some naming rules we should obey
+\end{block}
 
-Naming variables
-================
+. . .
 
-Naming rules
-============
+\begin{alertblock}{Rules}
+\begin{itemize}
+\item variable names can't start with a number
+\item variable names can't contain special characters such as \textbf{!}, \textbf{@}, \textbf{.}
+\item Can't be one of the reserved words
+\end{itemize}
+\end{alertblock}
 
--   variable names can\'t start with a number
+# Variables
 
--   variable names can\'t contain special characters such as !, @, .
+## Reserved words
 
--   Can\'t be one of the reserved words  
+|            |           |          |            |         |
+| ---------- | --------- | -------- | ---------- | ------- |
+| `and`      | `del`     | `from`   | `None`     | `True`  |
+| `as`       | `elif`    | `global` | `nonlocal` | `try`   |
+| `assert`   | `else`    | `if`     | `not`      | `while` |
+| `break`    | `except`  | `import` | `or`       | `with`  |
+| `class`    | `False`   | `in`     | `pass`     | `yield` |
+| `continue` | `finally` | `is`     | `raise`    |         |
+| `def`      | `for`     | `lambda` | `return`   |         |
 
-Reserved words
-==============
+# Variables
 
-    and       del       from      None      True\
-    as        elif      global    nonlocal  try\
-    assert    else      if        not       while\
-    break     except    import    or        with\
-    class     False     in        pass      yield\
-    continue  finally   is        raise\
-    def       for       lambda    return
-
-Mutability
-==========
+## Mutability
 
 In Python variables are mutable. This means that we can change their
 value at any time
@@ -202,41 +241,28 @@ name = "Jose"
 print(name)
 ```
 
-Mutability
-==========
-
-Converting values
-=================
+# Converting values
 
 There are some times when we need to convert a value from one type to
 another.
 
- 
+We use the **int()**, **bool()**, **str()**, and **float()** functions for that
 
-We use the int(), bool(), str(), and float() functions for that
+. . .
 
 ```python
 int('23')
-
 bool(1)
-
 bool(0)
-
 str(True)
-
 float("3.2")
 ```
 
-Converting values
-=================
-
-Printing output
-===============
+# Printing output
 
 One can print output using the **print()** function
 
-User input
-==========
+# User input
 
 There is a handy function **input()** that allows us to capture input
 from the user
@@ -247,19 +273,16 @@ name = input("Tell me your name: ")
 print("hello, " + name)
 ```
 
-Recap
-=====
+# Recap
 
--   Datatypes (int, float, bool, str)
--   Variables (naming, mutability)
--   Operators (arithmetic, precedence, string operators)
--   Converting values
--   User input
+>- Datatypes (int, float, bool, str)
+>- Variables (naming, mutability)
+>- Operators (arithmetic, precedence, string operators)
+>- Converting values
+>- User input
 
-Exercises
-=========
+# Exercises
 
-```python
 1. Create a program that calculates the total number of seconds in an hour
 2. How does the following expression evaluate?
 
@@ -279,4 +302,3 @@ Exercises
 5. Make the following expressions work (use Python console for this one)
    3 + "3"
    'there are ' + 4 ' dogs barking'
-```

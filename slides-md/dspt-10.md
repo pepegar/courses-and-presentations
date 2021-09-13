@@ -3,8 +3,6 @@ title: Data Structures & Programmatic Thinking
 subtitle: Session 10
 author: Pepe García
 email: jgarciah@faculty.ie.edu
-date: 2020-09-18
-lang: en
 ---
 
 # Mutating lists

@@ -2,8 +2,6 @@
 title: Data Structures & Programmatic Thinking
 author: Pepe García
 email: jgarciah@faculty.ie.edu
-date: 2020-04-20
-lang: en
 ---
 
 Data Structures & Programmatic Thinking

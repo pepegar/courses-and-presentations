@@ -3,8 +3,6 @@ title: Data Structures and Programmatic Thinking
 subtitle: Session 6
 author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
-date: 2020-07-27
-lang: en
 ---
 
 # Codecademy

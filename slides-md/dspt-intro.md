@@ -294,3 +294,6 @@ There was a **bug**, an infinite loop
 to read it for tomorrow)
 
 [https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/)
+
+Netflix' code vice
+Netflix' explained

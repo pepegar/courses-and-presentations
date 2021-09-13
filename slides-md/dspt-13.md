@@ -3,8 +3,6 @@ title: Data Structures and Programmatic Thinking
 subtitle: Session 13
 author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
-date: 2020-09-23
-lang: en
 ---
 
 # Plan for today

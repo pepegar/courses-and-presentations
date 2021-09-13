@@ -2,8 +2,6 @@
 title: Data Structures and Programmatic Thinking. Session 12
 author: Pepe García
 email: jgarciah@faculty.ie.edu
-date: 2020-04-20
-lang: en
 ---
 
 Data Structures and Programmatic Thinking. Session 12
