@@ -74,3 +74,9 @@ email: jgarciah@faculty.ie.edu
 Spyder is the editor we're going to use to develop Python programs.
 
 # Review
+
+. . .
+
+>- **CPU** is the _computing_ part of our computer
+>- **RAM** is used for the runtime of our programs to hold volatile data
+>- **HDD / SSD** stores non-volatile data, it's **way** slower than RAM. (http://norvig.com/21-days.html#answers)
