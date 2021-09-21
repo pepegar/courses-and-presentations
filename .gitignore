@@ -6,6 +6,9 @@ handouts/*.bbl
 handouts/*.blg
 handouts/*.log
 handouts/*.out
+handouts/*.fls
+handouts/*.synctex.gz
+handouts/*.fdb_latexmk
 
 .direnv
 .DS_Store
