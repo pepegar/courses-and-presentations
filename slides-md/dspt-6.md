@@ -312,6 +312,8 @@ Use for loops to iterate over elements in the list
 - Create a function that takes a list of numbers and returns the
    minimum value among them
 
+(cont)
+
 # Exercises (Cont)
 
 - Create a function that prints the numbers 1 to 50 (using iteration)
@@ -329,13 +331,17 @@ Use for loops to iterate over elements in the list
 *
 ```
 
+(cont)
+
+# Exercises (Cont)
+
 - Create a function `multiplicate` that takes two integers (`a` and
   `b`, for example) and returns a times b.  Do not use the `*`
   operator.
 
 - Create a function `exponentiate` that takes two arguments `base`
   and `exponent` and raises `base` to the `exponent` power.  Do not
-  use the `^` operator.
+  use the `**` operator.
 
 # Recommended literature
 

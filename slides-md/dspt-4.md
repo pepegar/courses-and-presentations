@@ -263,6 +263,26 @@ Combine comparision & logical operators to check the conditions you need
 
 Use if, else, elif for conditional execution
 
+# Exercises
+
+1. Create a function `weekly_commute_time` that asks the user their daily
+   commute time and returns their weekly time spent commuting.
+
+2. What do the following expressions return?
+   - `True or 11 > 34`
+   - `False and (1 == 1)`
+   - `(77 // 11) > 6 and False`
+
+5. Create a function `im_in_love` that takes a weekday number (from monday to
+   friday), and returns how that weekday is (according to The Cure!):
+
+```
+I don't care if Monday's blue
+Tuesday's grey and Wednesday too
+Thursday I don't care about you
+It's Friday, I'm in love
+```
+
 # Recommended read
 
 <https://automatetheboringstuff.com/> is a great resource for learning how to
