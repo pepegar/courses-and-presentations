@@ -1,8 +1,0 @@
-[build]
-publish = "site/public"
-command = "hugo --verbose --gc --minify --source site"
-
-[context.production.environment]
-HUGO_VERSION = "0.58.0"
-HUGO_ENV = "production"
-HUGO_ENABLEGITINFO = "true"

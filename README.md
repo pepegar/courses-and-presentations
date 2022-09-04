@@ -1,1 +1,1 @@
-# Data Structures and Programmatic Thinking
+# Programming Thinking
