@@ -8,7 +8,7 @@ email: Pepe García<jgarciah@faculty.ie.edu>
 # Plan for this session
 
 >- Learn a bit about hardware
->- Try the VS Code editor
+>- Try the Spyder editor
 
 # CPU
 
@@ -61,17 +61,30 @@ email: Pepe García<jgarciah@faculty.ie.edu>
 >- Higher capacity than RAM
 
 
-# Development Environment
+# Spyder
 
-\begin{exampleblock}{Anaconda} Does everybody have Anaconda installed?\end{exampleblock}
+::: columns
 
-# VS Code
+:::: column
 
-![](./img/spyder.png)
+![](./img/spyder.png){height=250px}
 
-# VS Code
+::::
 
-VS Code is the editor we're going to use to develop Python programs.
+:::: column
+
+Spyder is the editor we're going to use to develop Python programs.
+
+::::
+
+:::
+
+# Spyder
+
+\begin{exampleblock}{Using Spyder}
+Spyder lets you edit source code files, and run them.  Let's see how to use it!
+\end{exampleblock}
+
 
 # Review
 

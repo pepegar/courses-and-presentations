@@ -62,11 +62,11 @@ otherwise.
 
 # About
 
-## Participation
-
+\begin{exampleblock}{Participation}
 Please, raise your hand at any point in class if you want to ask something, make
 an useful comment, or answer a question.  (if remote, use Zoom's raise hand
 feature, so that it's easier to track it)
+\end{exampleblock}
 
 ---
 
@@ -91,6 +91,11 @@ masters that rely on programming.  We will:
 
 # Plan for this session
 
+- Know each other a little bit!
+
+. . .
+
+
 - Learn about software
 
 . . .
@@ -107,6 +112,11 @@ masters that rely on programming.  We will:
 
 Throughout this course we will use Python as our programming language, but there
 are many more!
+
+. . .
+
+\begin{exampleblock}{What programming languages have you heard of?}
+\end{exampleblock}
 
 # Language
 
@@ -186,8 +196,6 @@ Now we will install the Anaconda platform in our computers.
 2. Go to the bottom of the page, to the **Anaconda Installers** section, and
    download the graphical installer for the 3.7 version **for your operating
    system.**
-3. In the installer, when you're given the option to install the PyCharm IDE, or
-   Visual Studio Code, you can ignore it, we're not going to use it.
 
 ---
 
@@ -285,5 +293,4 @@ to read it for tomorrow)
 
 [https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/)
 
-Netflix' code vice
-Netflix' explained
+[Netflix' explained (Coding episode)](https://www.netflix.com/watch/81097620?trackId=14277283)

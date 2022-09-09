@@ -9,7 +9,9 @@ $(output)/%.pdf: $(source)/%.md
 	pandoc \
 		--variable monofont="PragmataPro Mono" \
 		--variable fontsize=12pt \
-		--variable theme=Copenhagen \
+		--variable theme=Madrid \
+		--include-in-header=./style.tex \
+		--standalone \
 		-f markdown $< \
 		-t beamer \
 		--highlight-style tango \
