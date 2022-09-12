@@ -5,23 +5,12 @@ author: Pepe García <jgarciah@faculty.ie.edu>
 email: Pepe García<jgarciah@faculty.ie.edu>
 ---
 
-## Plan for this session
+# Plan for this session
 
-. . .
-
-- Python basic datatypes
-
-. . .
-
-- Variables
-
-. . .
-
-- Operators
-
-. . .
-
-- Basic functions
+>- Python basic datatypes
+>- Variables
+>- Operators
+>- Basic functions
 
 # Datatypes
 
@@ -94,7 +83,7 @@ Why can one use either double or single quotes? why just not agree on one of the
 ## Booleans
 
 Booleans represent truthiness. There are only two values in for the bool
-type in Python: True and False
+type in Python: **`True`** and **`False`**
 
 ```python
 True
@@ -284,7 +273,7 @@ print("hello, " + name)
 1. Create a program that calculates the total number of seconds in an hour
 2. How does the following expression evaluate?
 
-   2 + (3 + 4) + (5 * 33 ** 34)
+**`2 + (3 + 4) + (5 * 33 ** 34)`**
 
 3. Create a program that asks the user for their age and their mother's
    age and calculate the age difference
@@ -292,10 +281,12 @@ print("hello, " + name)
 4. What are the results and result types of the following expressions?
    think it yourself, do not use the Python console for this
 
-   3 * 5 * 2
-   3 / 11
-   3 // 11
-   25 % 2
+```
+3 * 5 * 2
+3 / 11
+3 // 11
+25 % 2
+```
 
 5. Make the following expressions work (use Python console for this one)
    3 + "3"

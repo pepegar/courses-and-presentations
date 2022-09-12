@@ -5,7 +5,7 @@ author: Pepe García <jgarciah@faculty.ie.edu>
 email: Pepe García<jgarciah@faculty.ie.edu>
 ---
 
-# Plan for today
+# Plan for this session
 
 . . .
 
@@ -59,11 +59,11 @@ Boolean operations are useful for conditional execution.
 We use logical operators to combine **bool** values.  They are the operators with
 the lowest precedence, any other expression will be evaluated before them.
 
-  | name    | description                                |
-  | :------ | :----------------------------------------- |
-  | x and y | returns True if **x and y are True**       |
-  | x or y  | returns True if either **x or y are True** |
-  | not x   | **negates x**                              |
+  | name    | description                                    |
+  |:--------|:-----------------------------------------------|
+  | x and y | returns **True** if **x and y are True**       |
+  | x or y  | returns **True** if either **x or y are True** |
+  | not x   | **negates x**                                  |
 
 . . .
 
