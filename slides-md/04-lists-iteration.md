@@ -1,38 +1,16 @@
 ---
 title: Programming Thinking
-subtitle: Session 6
+subtitle: Session 5
 author: Pepe García <jgarciah@faculty.ie.edu>
 email: Pepe García<jgarciah@faculty.ie.edu>
 ---
 
 # Plan for this session
 
->- review last day exercises
->- mutability
 >- lists
 >- iteration
 
-# Last session exercises
-
-1. Create a function `weekly_commute_time` that asks the user their daily
-   commute time and returns their weekly time spent commuting.
-
-2. What do the following expressions return?
-   - `True or 11 > 34`
-   - `False and (1 == 1)`
-   - `(77 // 11) > 6 and False`
-
-5. Create a function `im_in_love` that takes a weekday number (from monday to
-   friday), and returns how that weekday is (according to The Cure!):
-
-```
-I don't care if Monday's blue
-Tuesday's grey and Wednesday too
-Thursday I don't care about you
-It's Friday, I'm in love
-```
-
-# Mutability
+# Mutability refresher
 
 Mutability is a feature of variables in most programming languages.  It
 means that variables can be updated to newer values.
@@ -62,37 +40,23 @@ while <condition>:
     <body>
 ```
 
-# While
-
-```python
-while <condition>:
-    <body>
-```
-
-## How does it work?
-
 . . .
 
-1. Evaluate the condition
+>1. Evaluate the condition
+>2. If the condition is False, exit while and go to next statement
+>3. If condition is true, execute body.  Then go to step 1.
 
-. . .
+# Iteration
 
-2. If the condition is False, exit while and go to next statement
+\begin{exampleblock}{Demo}
 
-. . .
+Using iteration, let's print integers from zero to 50
 
-3. If condition is true, execute body.  Then go to step 1.
-
-. . .
-
-## Demo
-
-Let's see how does the **while** loop work.  Let's create a function that
-prints the numbers 1 to 50 (using iteration)
+\end{exampleblock}
 
 # Practice
 
-## exercise
+## Exercise 1
 
 Create a function `pyramid` that receives an integer `n` as
 parameter and prints `n` lines of the following pattern:
@@ -105,10 +69,20 @@ parameter and prints `n` lines of the following pattern:
 *****
 ```
 
+# Checkpoint
+
+\begin{alertblock}{}
+
+Are there questions so far?
+
+\end{alertblock}
+
+
 # Lists
 
-Lists are sequences of values
-
+Lists are a sequence data structure.  We can store multiple values
+inside them, add and remove elements, update them, concatenate them,
+etc.
 
 # Constructing Lists
 
@@ -148,10 +122,10 @@ We use **square brackets** to access elements by their **index**.
 
 ```python
 words = ["hello", "dolly"]
-words[0]
-# "hello"
-words[1]
-# "dolly"
+print(words[0])
+# prints "hello"
+print(words[1])
+# prints "dolly"
 ```
 
 . . .
@@ -160,7 +134,7 @@ words[1]
 
 # Practice
 
-## Exercise
+## Exercise 2
 
 Create a function that receives a list as a parameter and prints each
 element of the list individually.
