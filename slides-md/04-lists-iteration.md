@@ -5,13 +5,6 @@ author: Pepe García <jgarciah@faculty.ie.edu>
 email: Pepe García<jgarciah@faculty.ie.edu>
 ---
 
-# Codecademy
-
-You have been invited to **Codecademy**.  Please follow the link in
-your email and create an account.  There will be some sessions in
-which you'll be required to get something done in Codecademy, but for
-now, explore and see if there's any course that catches your eye.
-
 # Plan for this session
 
 >- review last day exercises
