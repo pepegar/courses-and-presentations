@@ -13,5 +13,5 @@ jobs:
     - uses: cachix/cachix-action@v10
       with:
         name: pepegar
-        authToken: '${{ secrets.CACHIX_SIGNING_KEY }}'
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix build $(nix flake show --json | jq --raw-output '.packages."aarch64-darwin"|keys|map(".#" + .)|join(" ")')
