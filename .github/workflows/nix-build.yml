@@ -5,7 +5,7 @@ on:
     branches:
       - main
 jobs:
-  hooks:
+  CI:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3.0.2
@@ -21,7 +21,12 @@ jobs:
     - name: Commit changes
       uses: EndBug/add-and-commit@v9
       with:
-        author_name: Your Name
-        author_email: mail@example.com
-        message: 'Your commit message'
-        add: '*.js'
+        author_name: Pepe García
+        author_email: pepe@pepegar.com
+        message: '[bot] slides updated'
+        add: 'slides'
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
