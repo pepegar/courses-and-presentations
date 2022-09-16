@@ -1,5 +1,6 @@
 {
-  description = "Intro to programming course";
+  description =
+    "Different courses I teach, and some individual presentations too";
 
   inputs = {
     flake-utils = {
