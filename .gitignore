@@ -10,5 +10,8 @@ handouts/*.fls
 handouts/*.synctex.gz
 handouts/*.fdb_latexmk
 
+result
+result-*
+
 .direnv
 .DS_Store
