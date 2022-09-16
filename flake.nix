@@ -3,6 +3,7 @@
     "Different courses I teach, and some individual presentations too";
 
   inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
