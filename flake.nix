@@ -39,26 +39,28 @@
           -t beamer \
         '';
 
-        buildSlides = name: system:
+        buildSlides = folder: name: system:
           nix-pandoc.mkDoc.${system} {
             src = ./.;
             inherit texlive-combined name;
             phases = [ "unpackPhase" "buildPhase" "installPhase" ];
             buildPhase =
-              "pandoc ${pandocOpts} -o $name.pdf ./slides-md/$name.md";
-            installPhase = "mkdir -p $out; cp $name.pdf $out";
+              "pandoc ${pandocOpts} -o $name.pdf ./slides-md/${folder}/$name.md";
+            installPhase =
+              "mkdir -p $out/${folder}; cp $name.pdf $out/${folder}";
             extraBuildInputs = [ pkgs.which ];
           };
       in rec {
         packages = flake-utils.lib.flattenTree {
-          "pt/00-intro" = buildSlides "00-intro" system;
-          "pt/01-hardware" = buildSlides "01-hardware" system;
+          "pt/00-intro" = buildSlides "pt" "00-intro" system;
+          "pt/01-hardware" = buildSlides "pt" "01-hardware" system;
           "pt/02-datatypes-operators" =
-            buildSlides "02-datatypes-operators" system;
+            buildSlides "pt" "02-datatypes-operators" system;
           "pt/03-booleans-control-flow" =
-            buildSlides "03-booleans-control-flow" system;
-          "pt/04-lists-iteration" = buildSlides "04-lists-iteration" system;
-          "pt/05-dictionaries" = buildSlides "05-dictionaries" system;
+            buildSlides "pt" "03-booleans-control-flow" system;
+          "pt/04-lists-iteration" =
+            buildSlides "pt" "04-lists-iteration" system;
+          "pt/05-dictionaries" = buildSlides "pt" "05-dictionaries" system;
         };
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
