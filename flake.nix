@@ -39,15 +39,16 @@
           -t beamer \
         '';
 
-        buildSlides = folder: name: system:
+        buildSlides = folder: slidesName: system:
           nix-pandoc.mkDoc.${system} {
             src = ./.;
-            inherit texlive-combined name;
+            inherit texlive-combined;
+            name = "${folder}/${slidesName}";
             phases = [ "unpackPhase" "buildPhase" "installPhase" ];
             buildPhase =
-              "pandoc ${pandocOpts} -o $name.pdf ./slides-md/${folder}/$name.md";
+              "pandoc ${pandocOpts} -o ${slidesName}.pdf ./slides-md/${folder}/${slidesName}.md";
             installPhase =
-              "mkdir -p $out/${folder}; cp $name.pdf $out/${folder}";
+              "mkdir -p $out/${folder}; cp ${slidesName}.pdf $out/${folder}";
             extraBuildInputs = [ pkgs.which ];
           };
       in rec {
