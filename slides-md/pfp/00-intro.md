@@ -36,9 +36,8 @@ The objectives for this course are that:
 
 | **Section**         | **Score %** |
 | ------------------- | ----------- |
-| Final Exam          | 14 %        |
-| Intermediate Tests  | 16 %        |
-| Workgroups          | 20 %        |
+| Final Exam          | 25 %        |
+| Workgroups          | 25 %        |
 | Individual Work     | 40 %        |
 | Class Participation | 10 %        |
 
@@ -49,11 +48,9 @@ If someone is **`2 * σ`** low, they get an automatic **Fail**
 
 # Course introduction.  Important dates
 
-- October 21st: Midterm 1
-- November 19th: Midterm 2
-- November 26th: Workgroup assignment is sent out (you'll have some days to work on it)
-- December 13th: Individual assignment is out (you'll have some days to work on it)
-- December 16th: Final exam
+- Session 10th: Workgroup assignment is sent out (you'll have some days to work on it)
+- Session 13th: Individual assignment is out (you'll have some days to work on it)
+- Session 15th: Final exam
 
 # Course introduction
 
@@ -74,6 +71,7 @@ Let's see how to use VS Code:
 
 - Opening a folder to start working on it (we can drag and drop the folder to
   the editor)
+- Installing the Python extension
 - Creating files (`File > New File`, `File > Open...`)
 
 # Installing Git
@@ -290,7 +288,7 @@ $ git commit -m "add file.py to git"
 
 # Git operations
 
-One of the most powerful features of **git** is handling changes. 
+One of the most powerful features of **git** is handling changes.
 Let's add this function to our **file.py**.
 
 ```python
