@@ -16,6 +16,8 @@ jobs:
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - name: build slides
       run: nix build $(nix flake show --json | jq --raw-output '.packages."aarch64-darwin"|keys|map(".#" + .)|join(" ")')
+    - name: create required folders if they don't exist
+      run: mkdir -p slides/{pt,pfp}
     - name: move generated slides to slides folder
       run: sudo cp -R result*/* slides
     - name: Commit changes
