@@ -28,9 +28,7 @@ The objectives for this course are that:
 
 - Students learn how to use industry grade tools for programming (git, pip...)
 - Students will further their knowledge of the Python programming language.
-- Students understand how algorithms are designed and implemented.
-- Students will learn how to work with different data structures and apply them
-  to different cases.
+- Students will understand how to apply programming to resolve real world problems.
 
 # Course introduction. Grading
 
