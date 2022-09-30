@@ -62,7 +62,8 @@
           "pt/04-lists-iteration" =
             buildSlides "pt" "04-lists-iteration" system;
           "pt/05-dictionaries" = buildSlides "pt" "05-dictionaries" system;
-          "pfp/00-intro" = buildSlides "pfp" "00-intro" system;
+          "pfp/00-cli-git" = buildSlides "pfp" "00-cli-git" system;
+          "pfp/01-github" = buildSlides "pfp" "01-github" system;
         };
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {

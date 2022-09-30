@@ -351,6 +351,4 @@ Images and inspiration drawn from
 
 **[How to teach Git](https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html)**
 
-**[Codecademy - get started with Git and Github](https://www.codecademy.com/paths/computer-science/tracks/cspath-development-skills/modules/learn-git-git-workflow-u/articles/getting-started-git-and-github)**
-
 **[Learn git concepts, not commands](https://dev.to/unseenwizzard/learn-git-concepts-not-commands-4gjc)**
