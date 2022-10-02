@@ -50,17 +50,17 @@ Now that we have everything set, we're ready to **push** our code to
 Github!
 
 ``` {.diff}
-$ git push origin master
+$ git push origin main
 
 Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 608 bytes | 608.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/popogor/my-first-repo.git
- * [new branch]      master -> master
+ * [new branch]      main -> main
 ```
 
-**git push** sends changes from the local repository to the remote one. 
+**git push** sends changes from the local repository to the remote one.
 It's the way we have to *upload* code to github.
 
 # Git
@@ -68,7 +68,7 @@ It's the way we have to *upload* code to github.
 ## Interlude - branches
 
 As you've seen, the latest parameter that we passed to push is
-**`master`**.  That's the name of the default **branch** in git.
+**`main`**.  That's the name of the default **branch** in git.
 
 Branches are a way of being able to work in parallel features on the
 same repository.  We're not going to use them in this course, but if
@@ -80,7 +80,7 @@ The reverse of **pushing** is **pulling**, and that will allow us to
 bring all changes **from the remote repository to our local repository.**
 
 ``` {.diff}
-$ git pull origin master
+$ git pull origin main
 ```
 
 # Solving conflicts
@@ -88,7 +88,7 @@ $ git pull origin master
 *Conflicts* occur naturally when coding.  Mostly when we do collaborate
 with others.
 
- 
+
 
 Let's introduce a conflict and fix it ourselves!
 
@@ -113,7 +113,7 @@ $ git add file.py
 
 $ git commit -m "change function and make it substract"
 
-[master ae46fc3] change function and make it substract
+[main ae46fc3] change function and make it substract
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
@@ -126,15 +126,15 @@ Now let's simulate the changes someone else would make in github.
 Then, in our local repository, let's **git pull**
 
 ``` {.asciidoc}
-$ git pull origin master
+$ git pull origin main
 
 remote: Enumerating objects: 5, done.
 remote: Counting objects: 100% (5/5), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 From https://github.com/popogor/my-first-repo
- * branch            master     -> FETCH_HEAD
-   4c659b6..e441a78  master     -> origin/master
+ * branch            main     -> FETCH_HEAD
+   4c659b6..e441a78  main     -> origin/main
 Auto-merging file.py
 CONFLICT (content): Merge conflict in file.py
 Automatic merge failed; fix conflicts and then commit the result.
@@ -174,7 +174,7 @@ solving the conflict, telling git we're happy with the result.
 $ git add file.py
 
 $ git commit -m "merged conflict in file.py"
-[master 1abfd41] merged conflict in file.py
+[main 1abfd41] merged conflict in file.py
 ```
 
 # Solving conflicts
@@ -182,14 +182,14 @@ $ git commit -m "merged conflict in file.py"
 ``` {.diff}
 $ git log
 
-commit 1abfd4151a6d44e3268c59b56065730676e545db (HEAD -> master)
+commit 1abfd4151a6d44e3268c59b56065730676e545db (HEAD -> main)
 Merge: ae46fc3 e441a78
 Author: Pepe García <pepe@pepegar.com>
 Date:   Tue Nov 12 01:55:00 2019 +0100
 
     merged conflict in file.py
 
-commit e441a78ff5f91b986f0da3afddbb7a7a01ee1859 (origin/master)
+commit e441a78ff5f91b986f0da3afddbb7a7a01ee1859 (origin/main)
 Author: popogor <46658846+popogor@users.noreply.github.com>
 Date:   Tue Nov 12 01:38:13 2019 +0100
 
@@ -221,22 +221,22 @@ Date:   Mon Nov 11 23:55:49 2019 +0100
 handle, submit, and review assignments.  You will receive links like
 this one, and you'll need to accept the assignments:
 
-## Section 2
+## MCSBT
 
-<https://classroom.github.com/a/w5ZSPW16>
+<https://classroom.github.com/a/7g7mlhXm>
 
 
-## Section 3
+## MDBI
 
-<https://classroom.github.com/a/Meo0vyLF>
+<https://classroom.github.com/a/vR5iEE6b>
 
 # Github classroom
 
 When we accept an assignment in Github classroom, a new repository gets created
-automatically in our Github profile.  It gets
+automatically in our Github profile.
 
 
-# Cloning a project
+# Cloning a remote repo into our local machine
 
 ``` {.diff}
 $ git clone https://github.com/pepegar/my-first-repository.git
