@@ -69,6 +69,13 @@ It's the way we have to *upload* code to github.
 As you've seen, the latest parameter that we passed to push is
 **`main`**.  That's the name of the default **branch** in git.
 
+<br>
+
+You can see what's the name of the default branch in your repository
+with `git status`.
+
+<br>
+
 Branches are a way of being able to work in parallel features on the
 same repository.  We're not going to use them in this course, but if
 you're interested, there's a link in the bibliography.
