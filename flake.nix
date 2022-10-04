@@ -64,6 +64,7 @@
           "pt/05-dictionaries" = buildSlides "pt" "05-dictionaries" system;
           "pfp/00-cli-git" = buildSlides "pfp" "00-cli-git" system;
           "pfp/01-github" = buildSlides "pfp" "01-github" system;
+          "pfp/02-files" = buildSlides "pfp" "02-files" system;
         };
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {

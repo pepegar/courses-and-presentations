@@ -3,26 +3,28 @@ title: Programming fundamentals with Python
 subtitle: Using files with Python
 author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
-lang: en
 ---
 
 Plan for today
 
->- Files refresher
->- CSV refresher
+>- Learn about handling files with Python
+>- Learn about CSV
 >- Learn about JSON
 
 # data for today
 
-## Session 6 repository
+## Session 3 & 4 repository
 
 All materials for today's session will be in
-[**`https://github.com/pfp-2021/session-6`**](https://github.com/pfp-2021/session-6).  Clone it if you want to
-have it in your computer.
+[**`https://github.com/mcsbt-pfp-2022/sessions-3-and-4`**](https://github.com/mcsbt-pfp-2022/sessions-3-and-4).
+Clone it if you want to have it in your computer.
 
-# Plan for today
+```bash
 
-- Files refresher
+
+$ cd Desktop # or any other folder you'd like to put this repo
+$ git clone https://github.com/mcsbt-pfp-2022/sessions-3-and-4
+```
 
 # the **open** function
 
@@ -34,7 +36,7 @@ can do it as follows:
 . . .
 
 ```python
-file = open("/Users/pepe/Desktop/hello.txt")
+file = open("hello.txt")
 ```
 
 # Reading the contents of a file
@@ -45,7 +47,7 @@ of a file.  Let's do that line by line.
 . . .
 
 ```python
-file = open("/Users/pepe/Desktop/hello.txt")
+file = open("hello.txt")
 
 for line in file:
     print(line)
@@ -87,14 +89,9 @@ them.
 . . .
 
 ```python
-with open('/Users/pepe/Desktop/goodbye.txt', 'w') as file:
+with open('goodbye.txt', 'w') as file:
     file.write("goodbye y'all!")
 ```
-
-# Plan for today
-
-- Files refresher
-- CSV refresher
 
 # CSV
 
@@ -239,7 +236,7 @@ true
 "potatoes"
 4.77
 null
-{"name":"Pepe","surname":"Garcia"}
+{"first":"Pepe","last":"Garcia"}
 ```
 
 ::::
@@ -293,7 +290,7 @@ with open("data.json") as file:
 ```
 ::::
 
-:::: {.column}
+:::: {.column width=30%}
 
 **`json.load`** is a function from the json module that
 takes a **file object** as parameter and returns the contents of that
@@ -337,7 +334,7 @@ then the file object as parameters.
 
 # Homework
 
-You will find the data files for these exercises in this repository:  https://github.com/pfp-2021/session-6
+You will find the data files for these exercises in the repository
 
 - Let's get personal data from the person represented in
   **`luke.json`**.  Print the **`name`**, **`height`**,
