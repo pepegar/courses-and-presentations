@@ -4,10 +4,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-utils.url = "github:numtide/flake-utils";
 
     nix-pandoc = {
       url = "github:serokell/nix-pandoc";
@@ -65,6 +62,7 @@
           "pfp/00-cli-git" = buildSlides "pfp" "00-cli-git" system;
           "pfp/01-github" = buildSlides "pfp" "01-github" system;
           "pfp/02-files" = buildSlides "pfp" "02-files" system;
+          "pfp/03-modules" = buildSlides "pfp" "03-modules" system;
         };
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
