@@ -8,22 +8,10 @@ email: jgarciah@faculty.ie.edu
 
 # Plan for today
 
->- Errata & answer questions about previous sessions
 >- PYPI
 >- virtual environments
 >- pip
 >- Downloading & using Python libraries
-
-# Errata
-
-The last day I wasn't able to run cells that contained imports of local python
-packages.  This demonstrated to be a bug in VSCode's python plugin.
-
-# Q&A
-
-- How recursion works?
-- How mergesort recursion works?
-
 
 # Python Package Index
 
@@ -57,12 +45,6 @@ Let's search for some libraries in the Python Package Index...
 
 **Virtual environments** are a way to create a project with its own dependencies.
 
-# Virtual environments
-
-\begin{alertblock}{Hint}
-In order to follow today's class from windows, run commands in \textbf{Anaconda Prompt}.
-\end{alertblock}
-
 # Creating virtual environments
 
 In order to create a virtual environment, we'll use the `python -m venv` tool:
@@ -70,20 +52,11 @@ In order to create a virtual environment, we'll use the `python -m venv` tool:
 ```
 $ mkdir testing-virtualenvs
 $ cd testing-virtualenvs
-$ python -m venv env
+$ python3 -m venv env
 ```
 
 This last command creates a subdirectory in the current directory that will
-contain all the meta information about the virtualenv.  It's common to check
-that into `git`.
-
-# Activating a virtual environment
-
-We can _activate_ a virtual environment by running:
-
-```
-$ source env/bin/activate
-```
+contain all the meta information about the virtualenv.
 
 # pip
 
@@ -93,7 +66,7 @@ $ source env/bin/activate
 $ <venv>/bin/pip
 ```
 
-Or, in our case:
+in our case:
 
 ```
 $ env/bin/pip
@@ -210,7 +183,7 @@ from hackernews import hn
 
 client = hn.NewsClient()
 
-for story in client.get_best_story(10): # get 10 high score stories
+for story in client.get_best_story(10): # get 10 best stories
     print(story.title)
 ```
 
