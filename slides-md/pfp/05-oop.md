@@ -91,7 +91,7 @@ Constructing objects
 ====================
 
 The construction of objects from a class is handled by something called
-the **\_\_init\_\_** method
+the **__init__** method
 
 Constructing objects
 ====================
@@ -118,7 +118,7 @@ class Car:
 Constructing objects
 ====================
 
-It is a common thing to add validation logic to the **\_\_init\_\_**
+It is a common thing to add validation logic to the **__init__**
 method.
 
 ```python
@@ -126,7 +126,7 @@ class Car:
     def __init__(self, brand, model):
         if brand != "Ford" or brand != "Audi":
             raise ValueError("Don't know how to create a {}".format(brand))
-      
+
         self.brand = brand
         self.model = model
 ```
@@ -136,8 +136,6 @@ Practice
 
 Create a class that represents a clock.  It should contain **hours** and
 **minutes** only.
-
- 
 
 Validate that the attributes passed to the constructor make sense.
 
@@ -157,10 +155,7 @@ Methods
 
 Methods model functionality in our objects.
 
- 
-
-They are like functions, but they must receive a self parameter before
-others:
+They are functions that receive a `self` parameter before others:
 
 Methods
 =======
@@ -201,7 +196,7 @@ Recap
 
 **attribute** != **method**
 
-**\_\_init\_\_** is for constructing objects
+**__init__** is for constructing objects
 
 Homework
 ========
@@ -211,15 +206,15 @@ Homework
 Methods
 =======
 
-Let\'s model a **Rock band**:
+Let's model a **Rock band**:
 
-\- RockBand
+- RockBand
 
-  - add\_member()
+  - add_member()
 
   - rehearse()
 
-\- Member
+- Member
 
   - name
 
@@ -263,10 +258,10 @@ When we inherit classes, the methods from the parents are inherited too!
 class Vehicle:
     def start(self):
         print("BRROOOMMMMM!")
-        
+
 class Car(Vehicle):
     pass
-  
+
 car = Car()
 car.start()
 ```
@@ -280,7 +275,7 @@ Method overriding
 
 Something else we can do with **Inheritance** is method overriding.
 
- 
+
 
 **Method overriding** allows us to change the behavior of methods in a
 child class, let\'s see an example.
@@ -292,10 +287,10 @@ Method overriding
 class Vehicle:
     def start(self):
         print("BRROOOMMMMM!")
-        
+
 class Car(Vehicle):
     pass
-  
+
 class Tesla(Car):
     def start(self):
         print("blip!")
@@ -315,12 +310,12 @@ tesla.start()
 Practice
 ========
 
-Create a class **Polygon** with a method **calculate\_area()**.
+Create a class **Polygon** with a method **calculate_area()**.
 
- 
+
 
 Create two subclasses of it, **Square** and  **Circle** that override
-the **calculate\_area** method.
+the **calculate_area** method.
 
 type vs isinstance
 ==================
@@ -338,7 +333,7 @@ type(tesla) == Vehicle
 # returns False
 
 isinstance(tesla, Vehicle)
-# returns True 
+# returns True
 ```
 
 **isinstance** returns True if the class is in the hierarchy of the
@@ -356,7 +351,7 @@ an exception:
 ```python
 class FormValidationError(ValueError):
     pass
-  
+
 if not is_valid(email):
     raise FormValidationError()
 ```
@@ -367,7 +362,7 @@ Calling methods from the parent class
 Inside a class, we can use the **super()** function in order to access
 the parent class.
 
- 
+
 
 **super()** is very useful to extend the functionality of methods in the
 superclass.
@@ -379,7 +374,7 @@ Calling methods from the parent class
 class Polygon:
     def __init__(self, name):
         self.name = name
-        
+
 class Triangle():
     def __init__(self, base, height):
         super().__init__("triangle")
@@ -393,15 +388,15 @@ Encapsulation
 We use encapsulation to hide the internal state of an object from the
 outside.
 
- 
+
 
 Attributes or methods that are hidden from the outside, we call them
 **private**.
 
- 
+
 
 In order to declare a method or attribute as private, we use the prefix
-**\_\_ (double underscore)**
+**__ (double underscore)**
 
 Encapsulation
 =============
@@ -410,13 +405,13 @@ Encapsulation
 class Person:
     def __init__(self, name):
         self.__name = name
-        
+
 pepe = Person("Pepe")
 pepe.__name
 #AttributeError: 'Person' object has no attribute '__name'
 ```
 
-The class **Person** has a **private attribute** **\_\_name.**
+The class **Person** has a **private attribute** **__name.**
 
 Encapsulation
 =============
@@ -424,7 +419,7 @@ Encapsulation
 But, what do we do if we want to access a private attribute from the
 outside?
 
- 
+
 
 A common technique is to use a **getter method**
 
@@ -432,10 +427,10 @@ A common technique is to use a **getter method**
 class Person:
     def __init__(self, name):
         self.__name = name
-        
+
     def get_name(self):
         return self.__name
-        
+
 pepe = Person("Pepe")
 pepe.get_name()
 # "Pepe"

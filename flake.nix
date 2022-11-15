@@ -64,6 +64,7 @@
           "pfp/02-files" = buildSlides "pfp" "02-files" system;
           "pfp/03-modules" = buildSlides "pfp" "03-modules" system;
           "pfp/04-pip" = buildSlides "pfp" "04-pip" system;
+          "pfp/05-oop" = buildSlides "pfp" "05-oop" system;
         };
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
