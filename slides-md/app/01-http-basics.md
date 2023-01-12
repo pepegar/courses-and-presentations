@@ -12,6 +12,52 @@ email: jgarciah@faculty.ie.edu
 >- returning different status codes
 >- using request bodies
 
+# HTTP
+
+![](https://flask.palletsprojects.com/en/1.1.x/_images/flask-logo.png){width=200px}
+
+We will  use `flask` in this course to learn and create web servers in Python.
+
+. . .
+
+`flask` is bundled in Anaconda already, so we don't need to download it.
+
+# HTTP - flask
+
+\begin{exampleblock}{example: simple flask application}
+
+how do we use `flask`?
+
+\end{exampleblock}
+
+# HTTP - flask
+
+```python
+from flask import Flask
+
+app = Flask("simplest server")
+
+@app.route("/hello")
+def hello():
+    return "hello from the web!"
+
+app.run()
+```
+
+# HTTP routes
+
+Our flask server can handle different routes by adding more handlers to
+it:
+
+```python
+@app.route("/hello")
+def hello():
+    return "hi!"
+
+@app.route("/goodbye")
+def hello():
+    return "bye!"
+```
 
 # HTTP routes
 
@@ -54,12 +100,6 @@ def hello():
 ```
 
 # HTTP
-
-## Exercise
-
-Accept the assignment and clone it **https://bit.ly/3saKAMq**
-
-Let's do the **`tweeter_json.py`** exercise from the homework repository.
 
 # HTTP clients
 
