@@ -67,6 +67,7 @@
           "pfp/05-oop" = buildSlides "pfp" "05-oop" system;
           "app/00-intro" = buildSlides "app" "00-intro" system;
           "app/01-http-basics" = buildSlides "app" "01-http-basics" system;
+          "app/02-http-more" = buildSlides "app" "02-http-more" system;
         };
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {

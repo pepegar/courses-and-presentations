@@ -39,7 +39,6 @@ from flask import request
 @app.route("/get-body", methods = [ "POST" ])
 def get_body():
     body = request.get_json()
-    print(body)
     return "body received!" + str(body)
 ```
 
@@ -57,17 +56,18 @@ dictionary = {
 
 url = "http://localhost:5000/get-body"
 
-request.post(url, json=dictionary)
+requests.post(url, json=dictionary)
 ```
 
 # HTTP request bodies
 
 ## Exercise
 
-Modify the tweeter_json example to accept adding new tweets too.  Create the client side code in another file in order to call it.
+Let's create a very simple Twitter clone!  This Twitter must have the following
+functionalities:
 
->- submit **tweets** ({\"user\": \"pepe\", \"tweet\": \"Hello world\"})
->- List all tweets
+>- `POST /tweet`: submit **tweets** `{\"user\": \"pepe\", \"tweet\": \"Hello world\"}`
+>- `GET /`: List all tweets
 
 
 # Serving static files
