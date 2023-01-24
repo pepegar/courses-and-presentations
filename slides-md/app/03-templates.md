@@ -99,7 +99,7 @@ We can render templates using the **render_template** function, from
 **flask**.
 
 ::: {.columns}
-:::: {.column}
+:::: {.column width=70%}
 
 ```python
 from flask import render_template
@@ -112,12 +112,12 @@ def index():
 ```
 
 ::::
-:::: {.column}
+:::: {.column width=30%}
 
 &nbsp;
 
 Variables for the template are passed as arguments to the
-**`render_template`** function.  In this case `name="Pepe"`.
+**`render_template`** function.  In this case **`name="Pepe"`**.
 
 ::::
 :::
@@ -137,14 +137,14 @@ substituted with the corresponding value, flask templates also support
 &nbsp;
 
 ::: {.columns}
-:::: {.column}
+:::: {.column width=30%}
 
 &nbsp;
 
 We can use the **`if`** keyword in templates as we would do in Python.
 
 ::::
-:::: {.column}
+:::: {.column width=70%}
 
 ```html
 {% if name %}
