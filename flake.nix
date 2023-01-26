@@ -69,6 +69,8 @@
           "app/01-http-basics" = buildSlides "app" "01-http-basics" system;
           "app/02-http-more" = buildSlides "app" "02-http-more" system;
           "app/03-templates" = buildSlides "app" "03-templates" system;
+          "app/04-sessions-and-cookies" =
+            buildSlides "app" "04-sessions-and-cookies" system;
         };
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
