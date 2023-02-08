@@ -71,6 +71,7 @@
           "app/03-templates" = buildSlides "app" "03-templates" system;
           "app/04-sessions-and-cookies" =
             buildSlides "app" "04-sessions-and-cookies" system;
+          "app/05-dbs" = buildSlides "app" "05-dbs" system;
         };
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {

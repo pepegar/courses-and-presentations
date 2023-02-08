@@ -3,8 +3,6 @@ title: Advanced Programming with Python
 subtitle: sessions and cookies
 author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
-date: 2020-04-20
-lang: en
 ---
 
 # Plan for today
