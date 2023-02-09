@@ -45,7 +45,7 @@ other database engines.
 
 ```python
 from sqlalchemy import create_engine
-engine = create_engine("sqlalchemy:///paypalme.db")
+engine = create_engine("sqlite:///paypalme.db")
 ```
 
 
@@ -61,7 +61,7 @@ Something very important is that, as with files, the connection must be always c
 ```python
 from sqlalchemy import create_engine
 
-engine = create_engine("sqlalchemy:///paypalme.db")
+engine = create_engine("sqlite:///paypalme.db")
 
 connection = engine.connect()
 
@@ -77,7 +77,7 @@ Or we can use a with block! (this is what we usually do)
 ```python
 from sqlalchemy import create_engine
 
-engine = create_engine("sqlalchemy:///paypalme.db")
+engine = create_engine("sqlite:///paypalme.db")
 
 with engine.connect() as connection:
     # more interesting stuff
@@ -92,10 +92,10 @@ Finally, once we have the connection, we can start executing SQL queries!
 
 ```python
 # ...
-query = "SELECT * FROM invoices"
-invoices = connection.execute(query)
-for invoice in invoices
-    print(invoice[0]) # Results are represented as Python tuples
+query = "SELECT * FROM users"
+users = connection.execute(query)
+for user in users
+    print(user[0]) # Results are represented as Python tuples
 ```
 
 
