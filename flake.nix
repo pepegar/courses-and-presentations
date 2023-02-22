@@ -72,6 +72,7 @@
           "app/04-sessions-and-cookies" =
             buildSlides "app" "04-sessions-and-cookies" system;
           "app/05-dbs" = buildSlides "app" "05-dbs" system;
+          "app/06-rest" = buildSlides "app" "06-rest" system;
         };
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
