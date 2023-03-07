@@ -3,7 +3,6 @@ title: Advanced Programming with Python
 subtitle: Dash
 author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
-lang: en
 ---
 
 # Plan for today
