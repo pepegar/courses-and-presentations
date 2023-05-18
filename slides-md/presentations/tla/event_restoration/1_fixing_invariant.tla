@@ -6,18 +6,17 @@ CONSTANT NULL
 (* --algorithm 1_fixing_invariant
 variables     
     HotStorage = {};
-    ColdStorage = {Append("doc", ToString(x)): x \in {1}};
+    ColdStorage = {Append("doc", ToString(x)): x \in 1..3};
     EventRestorationQueue = <<>>;
     NotificationQueue = <<>>;
     Metadata \in [ColdStorage -> {[restoreBeginTime |-> NULL]}];
     CurrentTimeInSeconds = 0; \* models monotonic time
 
 define
-    SecondsDelta == 10 .. 500
     \* this will move time (CurrentTimeInSeconds) forward in ranges from 10 to 500 seconds.
     Tick(time) ==
         LET
-            seconds == RandomElement(SecondsDelta)
+            seconds == RandomElement(1 .. 500)
         IN
             time + seconds
     ToSet(s) == { s[i] : i \in DOMAIN s }

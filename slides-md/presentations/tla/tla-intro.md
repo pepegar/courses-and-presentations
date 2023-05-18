@@ -172,7 +172,7 @@ The problematic part for us was to just wait for a minute and then retry.
 
 :::{.columns}
 ::::{.column}
-Let's model this in Pluscal and see if we can get it to find the error.
+Let's write this in Pluscal and see if we can model it to find the error.
 ::::
 ::::{.column}
 ![](https://lamport.azurewebsites.net/tla/splash_small.png)
