@@ -27,7 +27,6 @@
 
         texlive-combined = pkgs.texlive.combine texlive-packages;
         pandocOpts = ''
-          --include-in-header=./style.tex \
           --pdf-engine-opt=-output-directory=_output \
           --pdf-engine-opt=-shell-escape \
           --pdf-engine=xelatex \
@@ -36,7 +35,25 @@
           -t beamer \
         '';
 
+        pandocOptsWithStyle = ''
+          --include-in-header=./style.tex \
+          ${pandocOpts}
+        '';
+
         buildSlides = folder: slidesName: system:
+          nix-pandoc.mkDoc.${system} {
+            src = ./.;
+            inherit texlive-combined;
+            name = "${folder}/${slidesName}";
+            phases = [ "unpackPhase" "buildPhase" "installPhase" ];
+            buildPhase =
+              "pandoc ${pandocOptsWithStyle} -o ${slidesName}.pdf ./slides-md/${folder}/${slidesName}.md";
+            installPhase =
+              "mkdir -p $out/${folder}; cp ${slidesName}.pdf $out/${folder}";
+            extraBuildInputs = [ pkgs.which ];
+          };
+
+        buildSlidesSkippingStyles = folder: slidesName: system:
           nix-pandoc.mkDoc.${system} {
             src = ./.;
             inherit texlive-combined;
@@ -74,6 +91,8 @@
           "app/05-dbs" = buildSlides "app" "05-dbs" system;
           "app/06-rest" = buildSlides "app" "06-rest" system;
           "app/07-dash" = buildSlides "app" "07-dash" system;
+          "presentations/tla/tla-intro" =
+            buildSlidesSkippingStyles "presentations/tla" "tla-intro" system;
         };
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
