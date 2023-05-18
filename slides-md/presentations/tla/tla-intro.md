@@ -136,7 +136,8 @@ def restore_events(event_stream_id):
     while not restored:
         try:
             enqueue_restoration_request(event_stream_id)
-            wait_for_notification(event_stream_id, timeout_in_seconds = 60)
+            # timeout in 60 secs
+            wait_for_notification(event_stream_id, 60)
             restored = True
         catch TimeoutException:
             continue
@@ -181,7 +182,54 @@ Let's write this in Pluscal and see if we can model it to find the error.
 
 # Real world example. Solution
 
-Head to **`event_restoration.tla`**.
+Head to **`0_event_restoration.tla`**.
+
+# Real world example. Solution
+
+After running it, you can see that we're encountering an error.  Our invariant
+is violated, meaning that we're enqueuing the same event twice.
+
+This is great, we've managed to reproduce the error in our model, but we gotta
+find a solution now.
+
+# Real world example. Solution
+
+Now, on the consumer side, we will update the restoration time when we start working on an event.
+
+```python
+class RestorationRequestConsumer:
+    def consume(event):
+        update_restore_time(event, now())
+        restore_events_to_hot_storage(event.stream_id)
+
+        notify_restoration_done(event.stream_id)
+```
+
+# Real world example. Solution
+
+And, we'll update the producer to check if the restoration time is too old, and
+only then start working on it.
+
+```python
+def restore_events(event_stream_id):
+    restored = False
+    while not restored:
+        try:
+            enqueue_restoration_request(event_stream_id)
+            # timeout in 60 secs
+            wait_for_notification(event_stream_id, 60)
+            restored = True
+        catch TimeoutException:
+            if is_restoration_too_old(event_stream_id):
+                continue
+            else:
+                wait(60)
+                continue
+```
+
+# Real world example. Solution
+
+Head over to **`1_fixing_invariant.tla`**.
 
 # Thanks
 
