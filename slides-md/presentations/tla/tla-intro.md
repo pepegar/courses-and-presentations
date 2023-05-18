@@ -235,8 +235,9 @@ Head over to **`1_fixing_invariant.tla`**.
 
 Thank to my **amazing colleages** that didn't need formal verification to
 understand this, and helped me with actual examples of how the previous model
-could fail, and be fixed,
+could fail, and be fixed.
 
+Find the slides at https://github.com/pepegar/courses-and-presentations/blob/main/slides/presentations/tla/tla-intro.pdf
 
 [^1]: <https://lamport.azurewebsites.net/tla/amazon-excerpt.html>
 [^2]: <https://awsmaniac.com/how-formal-methods-helped-aws-to-design-amazing-services/>
