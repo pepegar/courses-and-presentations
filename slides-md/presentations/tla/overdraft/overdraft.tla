@@ -1,11 +1,11 @@
 \* Modified from Hillel Wayne's in https://learntla.com/intro/conceptual-overview.html
----- MODULE pluscal ----
+---- MODULE overdraft ----
 EXTENDS TLC, Integers
 
 People == {"alice", "bob"}
 Money == 1..2
 
-(* --algorithm pluscal
+(* --algorithm overdraft
 variables
   accounts \in [People -> Money];
 

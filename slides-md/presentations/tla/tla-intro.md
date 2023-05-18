@@ -33,11 +33,11 @@ We model systems to undertand them better, and to be able to proof certain prope
 
 # Why model systems?
 
-Remember, the map is not the territory.  We're trying to understand the territory, not the map.
+Remember, the map is not the territory.  We're trying to understand the
+territory, not the map.
 
-When modelling our system and proving properties of it, we're proving properties of the model, which should map to our system correctly.
-
-**Make sure you're modelling your system correctly**.
+When modelling our system and proving properties of it, we're proving properties
+of the model, which should map to our system correctly.
 
 # Why model systems?
 
@@ -90,13 +90,6 @@ Spec == Init /\ [][Tick]_<<clock>>
 
 **We can think of TLA+ as the assembly specification language and PlusCal as C, that compiles to it**
 
-# How to use TLA+?
-
-- Write a model
-- Check it
-- Fix it
-- Repeat
-
 # Use in the real world
 
 - AWS[^2]
@@ -111,16 +104,16 @@ Spec == Init /\ [][Tick]_<<clock>>
 - Lists are delimited by `<<` and `>>` and comma separated.
 - Sets are enclosed by `{` and `}`, and comma separated.
 - Dictionaries are enclosed by `[` and `]`, and are comma separated.  Keys and values are mapped via `|->`.
-- Functions are functions in the mathematical way, mapping between a domain set and a codomain set.  The closest to functions in other languages are procedures.
+- Functions are functions in the mathematical way, mapping between a domain set and a codomain set.  The closest to functions in  other languages are operators.
 - We create processes to denote independent processes in our system.
 
 # Quick intro to PlusCal
 
 Let's demo it!
 
-Let's create a model for a simple system: a counter.
+Let's create a model for a simple system: A wire transfer with overdraft protection.
 
-Open **`pluscal.tla`**.
+Open **`overdraft.tla`**.
 
 # Quick intro to Pluscal
 
@@ -151,7 +144,7 @@ def restore_events(event_stream_id):
 
 # Real world example
 
-Of course, we had a consumer counterpart:
+Of course, we have a consumer counterpart:
 
 ```python
 class RestorationRequestConsumer:
