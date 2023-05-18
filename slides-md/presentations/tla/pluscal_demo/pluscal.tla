@@ -7,26 +7,30 @@ Money == 1..2
 
 (* --algorithm pluscal
 variables
-  acct \in [People -> Money];
+  accounts \in [People -> Money];
 
 define
-  NoOverdrafts ==
-    \A p \in People:
-      acct[p] >= 0
+    \* Invariants are values that are checked in every state of our progam.
+    NoOverdrafts ==
+        \* for all p in People. (notice that lots of math operations in TLA+ use LaTeX notation)
+        \A p \in People:
+            \* the account of p must be greater than zero
+            accounts[p] >= 0 \* TODO: see what happens if we make it mandatory for all accounts to have at least 1$
 end define;
 
-process wire \in {1}
+\* TODO: see what happens if we allow concurrent wire transfers
+process wire \in 1
 variable
-  amnt \in 1..2;
+  amount \in 1..2;
   from \in People;
   to \in People
 begin
   Check:
-    if acct[from] >= amnt /\ from /= to then
+    if accounts[from] >= amount /\ from /= to then
       Withdraw:
-        acct[from] := acct[from] - amnt;
+        accounts[from] := accounts[from] - amount;
       Deposit:
-        acct[to] := acct[to] + amnt;
+        accounts[to] := accounts[to] + amount;
     end if;
 end process;
 end algorithm; *)
