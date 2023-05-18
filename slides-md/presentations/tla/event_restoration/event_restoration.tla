@@ -6,7 +6,7 @@ CONSTANT NULL
 (* --algorithm event_restoration
 variables     
     HotStorage = {};
-    ColdStorage = {Append("doc", ToString(x)): x \in {1,2,3}};
+    ColdStorage = {Append("doc", ToString(x)): x \in {1}};
     EventRestorationQueue = <<>>;
     NotificationQueue = <<>>;
     Metadata \in [ColdStorage -> {[restoreBeginTime |-> NULL]}];
@@ -20,6 +20,8 @@ define
             seconds == RandomElement(SecondsDelta)
         IN
             time + seconds
+    ToSet(s) == { s[i] : i \in DOMAIN s }
+    TheresNoRepeatedMessages == Len(EventRestorationQueue) = Cardinality(ToSet(EventRestorationQueue))
 end define;
 
 macro tick()
@@ -53,6 +55,12 @@ begin
         tick();
         enqueue(EventRestorationQueue, doc);
     
+    AskForRestorationAgain:
+        tick();
+        if EventRestorationQueue # <<>> /\ doc \in ColdStorage then
+            enqueue(EventRestorationQueue, doc);
+        end if;    
+    
     WaitForNotification:
         tick();
         dequeue(NotificationQueue, notificationFromQueue);
@@ -77,7 +85,7 @@ begin
 
 end process;
 end algorithm; *)
-\* BEGIN TRANSLATION (chksum(pcal) = "8462aef" /\ chksum(tla) = "3a869432")
+\* BEGIN TRANSLATION (chksum(pcal) = "c404f1c1" /\ chksum(tla) = "46d0fadc")
 VARIABLES HotStorage, ColdStorage, EventRestorationQueue, NotificationQueue, 
           Metadata, CurrentTimeInSeconds, pc
 
@@ -89,6 +97,8 @@ Tick(time) ==
         seconds == RandomElement(SecondsDelta)
     IN
         time + seconds
+ToSet(s) == { s[i] : i \in DOMAIN s }
+TheresNoRepeatedMessages == Len(EventRestorationQueue) = Cardinality(ToSet(EventRestorationQueue))
 
 VARIABLES notificationFromQueue, doc, docFromQueue
 
@@ -100,7 +110,7 @@ ProcSet == {"producer"} \cup {"consumer"}
 
 Init == (* Global variables *)
         /\ HotStorage = {}
-        /\ ColdStorage = {Append("doc", ToString(x)): x \in {1,2,3}}
+        /\ ColdStorage = {Append("doc", ToString(x)): x \in {1}}
         /\ EventRestorationQueue = <<>>
         /\ NotificationQueue = <<>>
         /\ Metadata \in [ColdStorage -> {[restoreBeginTime |-> NULL]}]
@@ -116,10 +126,22 @@ Init == (* Global variables *)
 AskForRestoration == /\ pc["producer"] = "AskForRestoration"
                      /\ CurrentTimeInSeconds' = Tick(CurrentTimeInSeconds)
                      /\ EventRestorationQueue' = Append(EventRestorationQueue, doc)
-                     /\ pc' = [pc EXCEPT !["producer"] = "WaitForNotification"]
+                     /\ pc' = [pc EXCEPT !["producer"] = "AskForRestorationAgain"]
                      /\ UNCHANGED << HotStorage, ColdStorage, 
                                      NotificationQueue, Metadata, 
                                      notificationFromQueue, doc, docFromQueue >>
+
+AskForRestorationAgain == /\ pc["producer"] = "AskForRestorationAgain"
+                          /\ CurrentTimeInSeconds' = Tick(CurrentTimeInSeconds)
+                          /\ IF EventRestorationQueue # <<>> /\ doc \in ColdStorage
+                                THEN /\ EventRestorationQueue' = Append(EventRestorationQueue, doc)
+                                ELSE /\ TRUE
+                                     /\ UNCHANGED EventRestorationQueue
+                          /\ pc' = [pc EXCEPT !["producer"] = "WaitForNotification"]
+                          /\ UNCHANGED << HotStorage, ColdStorage, 
+                                          NotificationQueue, Metadata, 
+                                          notificationFromQueue, doc, 
+                                          docFromQueue >>
 
 WaitForNotification == /\ pc["producer"] = "WaitForNotification"
                        /\ CurrentTimeInSeconds' = Tick(CurrentTimeInSeconds)
@@ -127,15 +149,16 @@ WaitForNotification == /\ pc["producer"] = "WaitForNotification"
                        /\ notificationFromQueue' = Head(NotificationQueue)
                        /\ NotificationQueue' = Tail(NotificationQueue)
                        /\ Assert(notificationFromQueue' \notin ColdStorage, 
-                                 "Failure of assertion at line 60, column 9.")
+                                 "Failure of assertion at line 68, column 9.")
                        /\ Assert(notificationFromQueue' \in HotStorage, 
-                                 "Failure of assertion at line 61, column 9.")
+                                 "Failure of assertion at line 69, column 9.")
                        /\ pc' = [pc EXCEPT !["producer"] = "Done"]
                        /\ UNCHANGED << HotStorage, ColdStorage, 
                                        EventRestorationQueue, Metadata, doc, 
                                        docFromQueue >>
 
-producer == AskForRestoration \/ WaitForNotification
+producer == AskForRestoration \/ AskForRestorationAgain
+               \/ WaitForNotification
 
 TryRestoring == /\ pc["consumer"] = "TryRestoring"
                 /\ CurrentTimeInSeconds' = Tick(CurrentTimeInSeconds)

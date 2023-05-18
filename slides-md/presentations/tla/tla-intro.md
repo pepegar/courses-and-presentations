@@ -183,53 +183,6 @@ Let's model this in Pluscal and see if we can get it to find the error.
 
 Head to **`event_restoration.tla`**.
 
-# Real world example. Solution
-
-```tla+
----- MODULE event_restoration ----
-EXTENDS Integers, TLC, Sequences, FiniteSets, F
-
-(* --algorithm event_restoration
-
-\* Global variables, they define the state of our system.
-variables 
-    HotStorage = {};
-    ColdStorage = {Append("doc", ToString(x)): x \in {1}};
-    EventRestorationQueue = <<>>;
-    NotificationQueue = <<>>;
-    Metadata \in [ColdStorage -> {[restoreBeginTime |-> NULL]}];
-    CurrentTimeInSeconds = 0; \* models monotonic time
-
-end algorithm; *)
-```
-
-# Real world example. Solution
-
-```tla+
-process producer \in {"producer1"} \* It's possible to model more than 1 
-                                   \* producer by adding elements to this set
-begin
-    EnqueueDocForRestoration:
-        CurrentTimeInSeconds := Tick(CurrentTimeInSeconds);
-        EventRestorationQueue := Append(EventRestorationQueue, doc);
-    
-    EnqueueDocForRestorationAgain:
-        CurrentTimeInSeconds := Tick(CurrentTimeInSeconds);
-        if EventRestorationQueue # <<>> /\ ColdStorage # {} then
-            doc := CHOOSE x \in ColdStorage: TRUE;
-            EventRestorationQueue := Append(EventRestorationQueue, doc);
-        end if;
-    
-    WaitForNotification:
-        CurrentTimeInSeconds := Tick(CurrentTimeInSeconds);
-        recv(NotificationPubsub, notification);
-
-        assert notification["msg"] \notin ColdStorage;
-        assert notification["msg"] \in HotStorage;
-end process;
-```
-
-
 # Thanks
 
 Thank to my **amazing colleages** that didn't need formal verification to
