@@ -54,7 +54,7 @@ From Lamport's comment on Amazon's paper[^1].
 # What is TLA+?
 
 - TLA+ is a formal specification language
-- invented by Leslie Lamport (Turing award 2013, Paxos, Lamport Clocks, ...)
+- invented by Leslie Lamport (Turing award 2013, LaTeX, Paxos, Lamport Clocks, ...)
 - used to model concurrent systems
 
 ```tla+
