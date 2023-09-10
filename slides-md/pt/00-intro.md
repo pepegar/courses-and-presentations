@@ -110,7 +110,7 @@ masters that rely on programming.  We will:
 
 # Join the Slack channel!
 
-![](./img/qr-slack.png){height=90%}
+![](./img/qr.png){height=90%}
 
 
 # Languages
