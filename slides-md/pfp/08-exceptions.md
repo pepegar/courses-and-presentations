@@ -6,11 +6,6 @@ email: jgarciah@faculty.ie.edu
 date: 2020-04-20
 ---
 
-# Today's materials
-
-You can find today's materials in
-[https://github.com/pfp-2020/session-7](https://github.com/pfp-2020/session-7).
-
 # Plan for today
 
 >- Learn about exceptions
