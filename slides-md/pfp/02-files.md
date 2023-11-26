@@ -11,21 +11,6 @@ Plan for today
 >- Learn about CSV
 >- Learn about JSON
 
-# data for today
-
-## Session 3 & 4 repository
-
-All materials for today's session will be in
-[**`https://github.com/mcsbt-pfp-2022/sessions-3-and-4`**](https://github.com/mcsbt-pfp-2022/sessions-3-and-4).
-Clone it if you want to have it in your computer.
-
-```bash
-
-
-$ cd Desktop # or any other folder you'd like to put this repo
-$ git clone https://github.com/mcsbt-pfp-2022/sessions-3-and-4
-```
-
 # the **open** function
 
 We can use **open()** to open a file in Python, we only need to pass
@@ -164,13 +149,20 @@ with open("file.csv", "a") as f:
         writer.writerow(line)
 ```
 
-# CSV Files - exercise
+# CSV exercises
 
 ##
 
-Let's remember how to use CSV files.  There is a CSV in
-**`data/data.csv`**.  Let's create a Python function that returns all
-the emails from the users in the file.
+Download `all_stocks_5yr.csv` from data/ folder in Blackboard. Then:
+
+1. create a function `find_cheapest_buy_day` that receives a ticker (like 'MSFT' or 'AAPL') and returns which is the day from the dataset to buy that stock the cheapest.
+2. create a function that receives:
+    - A ticker (example 'GOOG')
+    - A buy date (example 2023-01-20)
+    - A sell date (example 2023-12-25)
+    - and an amount in dollars (example 1000)
+  
+  And returns the selling amount.
 
 # Plan for today
 
@@ -332,7 +324,7 @@ then the file object as parameters.
 
 :::
 
-# Homework
+# Exercises
 
 You will find the data files for these exercises in the repository
 

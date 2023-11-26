@@ -27,10 +27,6 @@
 
         texlive-combined = pkgs.texlive.combine texlive-packages;
         pandocOpts = ''
-          --pdf-engine-opt=-output-directory=_output \
-          --pdf-engine-opt=-shell-escape \
-          --pdf-engine=xelatex \
-          --standalone \
           --variable theme=Madrid \
           -t beamer \
         '';
@@ -97,10 +93,7 @@
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
             src = ./.;
-            hooks = {
-              nixfmt.enable = true;
-              nix-linter.enable = true;
-            };
+            hooks = { nixfmt.enable = true; };
           };
         };
         devShell = pkgs.mkShell {

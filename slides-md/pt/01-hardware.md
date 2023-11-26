@@ -8,7 +8,7 @@ email: Pepe García<jgarciah@faculty.ie.edu>
 # Plan for this session
 
 >- Learn a bit about hardware
->- Try the Spyder editor
+>- Try the VSCode editor
 
 # CPU
 
@@ -117,35 +117,10 @@ But **this** Random Access Memory!
 >- Higher capacity than RAM
 
 
-# Spyder
-
-::: columns
-
-:::: column
-
-![](./img/spyder.png){height=250px}
-
-::::
-
-:::: column
-
-Spyder is the editor we're going to use to develop Python programs.
-
-::::
-
-:::
-
-# Spyder
-
-\begin{exampleblock}{Using Spyder}
-Spyder lets you edit source code files, and run them.  Let's see how to use it!
-\end{exampleblock}
-
 # Recap.  What happens when Spyder runs a file?
 
 \begin{exampleblock}{Whiteboard}
-Let's understand what happens in under the hoodour computer when we
-run a file in Spyder.
+Let's understand what happens in under the hood of our computer when we run a file in VSCode
 \end{exampleblock}
 
 # Review

@@ -213,11 +213,20 @@ Now we will install the Anaconda platform in our computers.
 
 1. go to
    [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)
-2. Go to the bottom of the page, to the **Anaconda Installers** section, and
-   download the graphical installer for the 3.9 version **for your operating
-   system.**
+2. Download Anaconda distribution for your computer.
 
 # Install Anaconda platform
+
+\begin{exampleblock}{Checkpoint}
+Is anybody lost or has problems installing the software?
+\end{exampleblock}
+
+# Install VS Code
+
+1. Go to https://code.visualstudio.com/Download.
+2. Download VS Code for your computer.
+
+# Install VS Code
 
 \begin{exampleblock}{Checkpoint}
 Is anybody lost or has problems installing the software?
@@ -296,6 +305,16 @@ There was a **bug**, an infinite loop
 
 [https://www.bloomberg.com/news/articles/2012-08-02/knight-shows-how-to-lose-440-million-in-30-minutes](https://www.bloomberg.com/news/articles/2012-08-02/knight-shows-how-to-lose-440-million-in-30-minutes)
 
+# Data structures
+
+We use different data structures depending what we want to represent.
+
+- Strings: text
+- Lists: Twitter's timeline
+- Dictionaries: phonebook, DNS
+- Stacks: undo/redo 
+...
+
 # Recap
 
 . . .
@@ -306,6 +325,10 @@ There was a **bug**, an infinite loop
 
 - Algorithms, like cooking recipes, will guide our program to perform what we
   want.
+
+. . .
+
+- Different data structures will be used depending on the purpose of our program.
 
 # Recommended reading
 
