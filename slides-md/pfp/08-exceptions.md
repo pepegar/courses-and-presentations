@@ -34,7 +34,7 @@ to read a file that doesn't exist. \end{exampleblock}
 
 # Exceptions - propagation
 
-\begin{exampleblock}{Demo} Let's take a look at how exceptions propagate \end{exampleblock}
+\begin{exampleblock}{Demo} Let's take a look at how exceptions propagate, introduce the call-stack. \end{exampleblock}
 
 # Exercise
 
