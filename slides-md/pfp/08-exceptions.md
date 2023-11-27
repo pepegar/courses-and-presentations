@@ -1,6 +1,6 @@
 ---
 title: Programming fundamentals with Python
-subtitle: Session 7
+subtitle: Exceptions and error handling
 author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
 date: 2020-04-20
@@ -31,6 +31,10 @@ that failure.  **`except`** is used to control the failure.
 
 \begin{exampleblock}{Demo} Let's control the exceptions that happens when we try
 to read a file that doesn't exist. \end{exampleblock}
+
+# Exceptions - propagation
+
+\begin{exampleblock}{Demo} Let's take a look at how exceptions propagate \end{exampleblock}
 
 # Exercise
 
