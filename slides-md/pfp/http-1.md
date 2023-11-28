@@ -153,30 +153,23 @@ Let's try using **requests** to get the homepage of http://google.com
 Requests has builtin function for handling JSON responses
 
 ```python
-response = requests.get('http://api.open-notify.org/astros.json')
+response = requests.get('https://swapi.dev/api/starships/9')
 
 response.json()
 ```
 
 # requests library
 
-Use [**http://api.open-notify.org/astros.json**](http://api.open-notify.org/astros.json)
+Use https://swapi.dev/api/starships/9
 
-Call the API and print a message like:
-
-```python
-There's currently 78 people in space:
-- Christina Coch
-- Alexander Skvortsov
--...
-```
+Call the API and print the name and model of the spaceship!
 
 # requests library
 
 Use the Github API to retrieve all the public repositories in our
 organization!
 
-https://api.github.com/orgs/pfp-2020/repos
+https://api.github.com/orgs/mcsbt-2023/repos
 
 . . .
 
@@ -184,28 +177,10 @@ Then, for each one of them, print all commit messages.
 
 . . .
 
-https://api.github.com/repos/pfp-2020/session-6/commits
+https://api.github.com/repos/mcsbt-2023/session-16/commits
 
 `data["commit"]["message"]`
 
 # Fuel for crazy ideas
 
 <https://github.com/toddmotto/public-apis>
-
-# Exercises
-
-# Exercise 1
-
-Create a function that uses the **requests** library to get the lyrics
-of a song.
-
-You can use the **lyrics.ovh** api as described here:
-
-https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search?console=1
-
-# Exercise 1
-
-Create a function that returns the current latitude and longitude of the
-ISS
-
-http://api.open-notify.org/
