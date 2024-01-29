@@ -53,41 +53,42 @@ How do we use HTML templates with Flask.
 
 # SESSION 7
 
+## Lab: creating a dynamic website
+
+In this lab, we'll work in class to wind up creating a dynamic website in
+Flask, that uses HTML templates, loads CSS stylesheets, and reacts to dynamic
+routes.
+
+# SESSION 8, 9
+
 ## Web servers - Authentication
 
 In this session we will learn about how to implement authentication in web
 applications.
 
-# SESSION 8
+# SESSION 10, 11, 12
 
 ## Connecting to databases
 
-In this session we will learn how to make our Python applications connect to
-databases.  The professor will create a video for the students to follow.
+In these sessions we will learn how to make our Python applications connect to
+databases.  We will also learn advanced techniques that help us deal with data
+in the database using object oriente programming.
 
-# SESSION 9
+# SESSION 13
 
-## Connecting to databases
-
-In this session we will review what we did in the last async session about
-databases, and learn a bit more about how render data from the database to
-HTML.
-
-# SESSION 10
-
-## Case: building a Twitter clone in Python
+## Lab: building a Twitter clone in Python
 
 We will use this session to do some hands-on work.  We will tackle a small
 project in class in which we will create a Twitter clone with Python.
 
-# SESSION 11
+# SESSION 14
 
 ## Group assignment
 
 In this session students will do a group assignment.  We will have time in
 class for working on it and ask questions.
 
-# SESSION 12
+# SESSION 15
 
 ## Building RESTful APIs in Python
 
@@ -96,22 +97,29 @@ they can be connected to different programs.  In this session we'll learn what
 do we mean by RESTful and how to adapt our servers to interact in a RESTful
 fashion.
 
-# SESSION 13
-
-## Analytical web applications - Dash
-
-In this session we will introduce a new framework for data oriented web
-applications, Dash.  With Dash we will be able to construct data rich
-applications in an easy way.
-
-# SESSION 14
+# SESSION 17
 
 ## Deployment
 
 In this session we will learn how to deploy our flask applications to the
 cloud.
 
-# SESSION 15
+# SESSION 17, 18
+
+## Data Intensive Web Application
+
+In this session we will introduce a new framework for data oriented web
+applications.  Using this framework it will be easier to create dashboards and
+data rich applications with Python.
+
+# SESSION 19
+
+## Lab: Data Intensive Web Application
+
+In this session we'll work together to get to build a dashboard application in
+Python
+
+# SESSION 20
 
 ## QA session
 
