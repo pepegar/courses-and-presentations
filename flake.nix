@@ -5,16 +5,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-
-    nix-pandoc = {
-      url = "github:serokell/nix-pandoc";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
   };
 
-  outputs = { self, nixpkgs, flake-utils, nix-pandoc, pre-commit-hooks }:
+  outputs = { self, nixpkgs, flake-utils, pre-commit-hooks }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -37,29 +31,28 @@
         '';
 
         buildSlides = folder: slidesName: system:
-          nix-pandoc.mkDoc.${system} {
+          pkgs.stdenvNoCC.mkDerivation {
             src = ./.;
-            inherit texlive-combined;
-            name = "${folder}/${slidesName}";
-            phases = [ "unpackPhase" "buildPhase" "installPhase" ];
-            buildPhase =
-              "pandoc ${pandocOptsWithStyle} -o ${slidesName}.pdf ./slides-md/${folder}/${slidesName}.md";
-            installPhase =
-              "mkdir -p $out/${folder}; cp ${slidesName}.pdf $out/${folder}";
-            extraBuildInputs = [ pkgs.which ];
+            name = slidesName;
+            buildInputs = [ texlive-combined pkgs.pandoc pkgs.coreutils ];
+            phases = [ "unpackPhase" "buildPhase" ];
+            buildPhase = ''
+              mkdir -p $out/${folder}
+              ls -la
+              ${pkgs.pandoc}/bin/pandoc -o $out/${folder}/${slidesName}.pdf ./slides-md/${folder}/${slidesName}.md ${pandocOptsWithStyle}
+            '';
           };
 
         buildSlidesSkippingStyles = folder: slidesName: system:
-          nix-pandoc.mkDoc.${system} {
+          pkgs.stdenv.mkDerivation {
             src = ./.;
-            inherit texlive-combined;
-            name = "${folder}/${slidesName}";
-            phases = [ "unpackPhase" "buildPhase" "installPhase" ];
-            buildPhase =
-              "pandoc ${pandocOpts} -o ${slidesName}.pdf ./slides-md/${folder}/${slidesName}.md";
-            installPhase =
-              "mkdir -p $out/${folder}; cp ${slidesName}.pdf $out/${folder}";
-            extraBuildInputs = [ pkgs.which ];
+            name = slidesName;
+            nativeBuildInputs = [ texlive-combined pkgs.pandoc ];
+            phases = [ "unpackPhase" "buildPhase" ];
+            buildPhase = ''
+              mkdir -p $out/${folder}
+              ${pkgs.pandoc}/bin/pandoc -o $out/${folder}/${slidesName}.pdf ./slides-md/${folder}/${slidesName}.md
+            '';
           };
       in rec {
         packages = flake-utils.lib.flattenTree {
