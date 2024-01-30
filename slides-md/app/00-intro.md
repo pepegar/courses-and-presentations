@@ -156,7 +156,7 @@ HTTP **servers answer with responses**.
 
 Uniform Resource Locators.
 
-![](https://i.insider.com/601c27acee136f00183aa4f5?width=750&format=jpeg&auto=webp)
+![](./img/uri.webp)
 
 # HTTP
 

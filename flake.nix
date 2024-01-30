@@ -23,6 +23,7 @@
         pandocOpts = ''
           --variable theme=Madrid \
           -t beamer \
+          --pdf-engine=xelatex
         '';
 
         pandocOptsWithStyle = ''
@@ -38,7 +39,6 @@
             phases = [ "unpackPhase" "buildPhase" ];
             buildPhase = ''
               mkdir -p $out/${folder}
-              ls -la
               ${pkgs.pandoc}/bin/pandoc -o $out/${folder}/${slidesName}.pdf ./slides-md/${folder}/${slidesName}.md ${pandocOptsWithStyle}
             '';
           };
