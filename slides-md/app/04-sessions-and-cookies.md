@@ -113,7 +113,6 @@ that the client **will send back** in subsequent requests!
 
 ::::
 :::: {.column}
-![](https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2017%2F11%2Fthe-joy-of-cookies-cookie-monster-blog0817.jpg&q=85)
 ::::
 :::
 

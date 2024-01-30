@@ -51,7 +51,7 @@
             phases = [ "unpackPhase" "buildPhase" ];
             buildPhase = ''
               mkdir -p $out/${folder}
-              ${pkgs.pandoc}/bin/pandoc -o $out/${folder}/${slidesName}.pdf ./slides-md/${folder}/${slidesName}.md
+              ${pkgs.pandoc}/bin/pandoc -o $out/${folder}/${slidesName}.pdf ./slides-md/${folder}/${slidesName}.md ${pandocOpts}
             '';
           };
       in rec {

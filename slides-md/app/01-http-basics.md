@@ -14,8 +14,6 @@ email: jgarciah@faculty.ie.edu
 
 # HTTP
 
-![](https://flask.palletsprojects.com/en/1.1.x/_images/flask-logo.png){width=200px}
-
 We will  use `flask` in this course to learn and create web servers in Python.
 
 . . .

@@ -30,7 +30,6 @@ email: jgarciah@faculty.ie.edu
 
 :::: column
 
-![](https://toppng.com/uploads/preview/rest-api-icon-rest-api-icon-11553510526uqs2ynyga2.png)
 
 ::::
 

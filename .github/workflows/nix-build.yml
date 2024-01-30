@@ -17,7 +17,7 @@ jobs:
     - name: build slides
       run: nix build $(nix flake show --json | jq --raw-output '.packages."aarch64-darwin"|keys|map(".#" + .)|join(" ")')
     - name: create required folders if they don't exist
-      run: mkdir -p slides/{pt,pfp}
+      run: mkdir -p slides/{pt,pfp,app,presentations/tla}
     - name: move generated slides to slides folder
       run: sudo cp -R result*/* slides
     - name: Commit changes

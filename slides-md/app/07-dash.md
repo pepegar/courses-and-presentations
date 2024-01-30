@@ -21,7 +21,6 @@ email: jgarciah@faculty.ie.edu
 ::::
 ::::{.column}
 
-![](https://storage.googleapis.com/hackersandslackers-cdn/2018/12/Dash.jpg)
 
 ::::
 :::

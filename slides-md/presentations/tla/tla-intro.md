@@ -27,7 +27,6 @@ email: pepe@goodnotes.com
 We model systems to undertand them better, and to be able to proof certain properties of them.
 ::::
 ::::{.column}
-![](https://ds1.static.rtbf.be/article/image/1240x800/a/d/1/97427b4a894f63258b38151d8f0752e4-1507811971.jpg)
 ::::
 :::
 
@@ -176,7 +175,6 @@ The problematic part for us was to just wait for a minute and then retry.
 Let's write this in Pluscal and see if we can model it to find the error.
 ::::
 ::::{.column}
-![](https://lamport.azurewebsites.net/tla/splash_small.png)
 ::::
 :::
 

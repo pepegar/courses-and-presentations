@@ -156,7 +156,7 @@ HTTP **servers answer with responses**.
 
 Uniform Resource Locators.
 
-![](./img/uri.webp)
+![](./img/uri.png)
 
 # HTTP
 
