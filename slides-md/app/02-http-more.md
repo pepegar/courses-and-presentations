@@ -90,12 +90,6 @@ def serve_image(image):
         filename="{}.png".format(image))
 ```
 
-# Serving static files
-
-## Example
-
-See `session-3/example-1`
-
 # Serving HTML
 
 HTML files, as files of any other type can be served using the
@@ -113,7 +107,11 @@ def index():
 
 ## Exercise
 
-See `exercises/static_files`
+Let's draft a Twitter for dogs website!
+
+Create three routes for it: a homepage, an about page, and a login page.
+
+(we don't need any functionality on these yet, only the HTML)
 
 # Useful links
 
