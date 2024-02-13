@@ -154,7 +154,7 @@ We can use the **`if`** keyword in templates as we would do in Python.
 
 ## Exercise 1
 
-We have this **`logged_in`** variable in our `exercise1.py` server.
+We have this **`logged_in`** variable in our `exercises/loggedin.py` server.
 Depending on the value it has, we want to print either
 
 `Welcome to the private area`
