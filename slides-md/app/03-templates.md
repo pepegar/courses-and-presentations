@@ -20,9 +20,9 @@ So far we have seen only a very simple setup of HTML,
 
 ## Example 1
 
-Let's create a website with several pages.
+Let's create a twitter for dogs website!
 
-We'll have a **home.html** and an **about.html** page.
+Create three routes for it: a homepage, an about page, and a login page.
 
 . . .
 
@@ -121,12 +121,6 @@ Variables for the template are passed as arguments to the
 ::::
 :::
 
-# Templates
-
-## Example 2
-
-See **`example2.py`** in the repository for a full example
-
 # Control statements. **`if`**
 
 Apart from the double curly brackets (**`{{ }}`**), that will be
@@ -190,7 +184,7 @@ case, render something.
 ::::
 :::: {.column}
 
-We will also be able to iterate over a sequence of values using the
+Here we're generating `n` p tags, one per each name in `names`
 **`{% for ... %}`** block!
 
 ::::
@@ -200,7 +194,7 @@ We will also be able to iterate over a sequence of values using the
 
 ## Exercise 2
 
-In `exercise2.py` we have a list of members of the beatles, make sure
+In `exercises/beatles.py` we have a list of members of the beatles, make sure
 that you show them in the webpage.
 
 # Template Inheritance
@@ -251,8 +245,8 @@ After we've created our base template we can extend it from others!
 
 ## Exercise 3
 
-Using template inheritance, fix the **example-1** so that we don't
-repeat ourselves.
+Using template inheritance, fix the **twitter for dogs** example so that we
+don't repeat ourselves.
 
 # Shameless plug
 
