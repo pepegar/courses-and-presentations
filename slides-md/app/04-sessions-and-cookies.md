@@ -99,6 +99,7 @@ discussed, **sessions**.
 
 Session help us authenticate users given some piece of data in their request.
 This piece of data can be:
+
 - A cookie
 - An API token
 - A JWT
@@ -111,6 +112,7 @@ discussed, **sessions**.
 
 Session help us authenticate users given some piece of data in their request.
 This piece of data can be:
+
 -**A cookie**
 - An API token
 - A JWT
