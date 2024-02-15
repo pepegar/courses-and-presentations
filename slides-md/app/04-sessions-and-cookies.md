@@ -82,14 +82,14 @@ def handle_login():
     username = request.form["username"]
     password = request.form["password"]
 
-    # Now, do whatever you want with user and password, for example, create a 
+    # Now, do whatever you want with user and password, for example, create a
     # new session for the user
 ```
 
-# Adding login to our users backoffice
+# Adding login to Twitter for dogs!
 
-\begin{exampleblock}{Adding login to our user's backoffice}
-Let's add login functionality to our user's backoffice!
+\begin{exampleblock}{Adding login to Twitter for dogs!}
+Let's add login functionality to Twitter for dogs!!
 \end{exampleblock}
 
 # Sessions
@@ -97,19 +97,34 @@ Let's add login functionality to our user's backoffice!
 There's a feature of most web applications that we haven't yet
 discussed, **sessions**.
 
-Session in the web allow to create sections of websites that are
-private, for which users need to authenticate in order to access.
+Session help us authenticate users given some piece of data in their request.
+This piece of data can be:
+- A cookie
+- An API token
+- A JWT
+- ...
+
+# Sessions
+
+There's a feature of most web applications that we haven't yet
+discussed, **sessions**.
+
+Session help us authenticate users given some piece of data in their request.
+This piece of data can be:
+-**A cookie**
+- An API token
+- A JWT
+- ...
 
 # Sessions & cookies
 
-Sessions are hold by making HTTP use a special kind of header called
-cookie.
+Sessions can be used to authenticate users by relying on cookies
 
 ::: {.columns}
 :::: {.column}
 
 Cookies are headers that the server sends alongside the HTTP response,
-that the client **will send back** in subsequent requests!
+that the client **will send back** in subsequent requests to that host!
 
 ::::
 :::: {.column}
@@ -135,7 +150,23 @@ def handle_login():
     username = request.form["username"]
     password = request.form["password"]
 
-    session["username"] = username # this way, we can identify the username
+    # The session object behaves like a dictionary
+    session["username"] = username # this way, we can identify
+                                   # the user
+```
+
+# Using sessions in flask
+
+We also use the session object to log the user out.
+
+```python
+from flask import  session
+
+@app.route("/logoug")
+def handle_login():
+    # removing a session object by their key, like in a
+    # normal dictionary
+    session.pop("username")
 ```
 
 # Using sessions in flask
