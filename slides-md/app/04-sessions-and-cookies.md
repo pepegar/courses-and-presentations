@@ -162,13 +162,14 @@ def handle_login():
 We also use the session object to log the user out.
 
 ```python
-from flask import  session
+from flask import session, redirect
 
-@app.route("/logoug")
-def handle_login():
+@app.route("/logout")
+def handle_logout():
     # removing a session object by their key, like in a
     # normal dictionary
     session.pop("username")
+    return redirect("/")
 ```
 
 # Using sessions in flask
