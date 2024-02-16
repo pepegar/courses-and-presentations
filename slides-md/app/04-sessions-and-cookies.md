@@ -188,3 +188,9 @@ def index():
         return render_template("login.html")
 ```
 
+# Exercise
+
+## Signing users up
+
+make it possible to create new accounts in barker.  When creating an account,
+you must ask for user and password, and hash the password before storing it.
