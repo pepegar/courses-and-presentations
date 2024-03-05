@@ -109,6 +109,43 @@ for user in users
 
 Let’s implement login in paypalme using databases!
 
+# Interlude
+
+## SQL Injection
+
+When we accept input from the user, we **always** need to _sanitize_ that
+input.  Sanitization is the process of making it safe to be passed to the
+database.
+
+see <https://xkcd.com/327/>
+
+# Interlude.  Sanitizing inputs
+
+Luckily, most DB libraries will handle sanitization for us.  Sqlalchemy
+provides the `text` function:
+
+```python
+from sqlalchemy import text
+
+t = text("SELECT * FROM users")
+result = connection.execute(t)
+```
+
+# Interlude.  Sanitizing inputs
+
+If we wanted to parametrize with some user's input, we can use _bind
+parameters_:
+
+```python
+from sqlalchemy import text
+
+t = text("SELECT * FROM users WHERE user_id=:user_id")
+
+# SQLAlchemy will sanitize whatever we pass as bind params, protecting us from
+# SQL Injection
+result = connection.execute(t, user_id="3")
+```
+
 # Exercise
 
 ## Exercise 2
