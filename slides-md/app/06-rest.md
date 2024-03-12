@@ -11,12 +11,8 @@ email: jgarciah@faculty.ie.edu
 - REST in the server with Flask
 - consuming REST APIs wiht requests
 
+
 # What's an API
-
-
-::: columns
-
-:::: column
 
 ## From Wikipedia
 
@@ -26,14 +22,6 @@ email: jgarciah@faculty.ie.edu
 > describes how to build or use such a connection or interface is called an API
 > specification. [Wikipedia](https://en.wikipedia.org/wiki/API)
 
-::::
-
-:::: column
-
-
-::::
-
-:::
 
 # What's an API
 
@@ -43,16 +31,25 @@ software components**.
 In order to be used from other software components, they must use a data
 interchange format.  In our examples we'll use JSON.
 
+# Creating APIs in Flask
+
+## Example
+
+Let's see an example of a REST API in `rest.py`.
+
+run it and visit `/users`
+
 # What's REST
 
-We call REST APIs to APIs that follow some particular principles:
+We say an API is a REST API when:
 
-- They use **URIs for resources**
-- They're **stateless**
+- It uses **URIs for resources**
+- It's **stateless**
+- It uses HTTP semantically (verbs, status codes...)
 
 # What's REST. URIs for resources
 
-_Resources_ in your API must be represented as URIs.
+_Resources_ in your API are represented as URIs.
 
 Different operations on them are represented with different HTTP methods on
 that URI.
@@ -61,6 +58,8 @@ that URI.
 - `GET` for reading a resource
 - `PUT` for updating a resource
 - `DELETE` for deleting a resource
+
+> We call these 4 operations CRUD (Create, Read, Update, Delete)
 
 ## Example URIs
 
@@ -74,29 +73,55 @@ http://aws.amazon.com/ec2/instances/0f9304a4-e4f8-4d95-acce-bc92794cf365
 This means that the HTTP Request must come with everything needed in order to
 fulfill it.
 
-# Creating REST APIs in Flask
+## Let's see the impact statelessness has in our server applications
 
-## Example
+There shouldn't be any expected state left in the server waiting for the next
+request.  Traditional session cookies are discouraged, since they exist in the
+server's memory, they're stateful.
 
-Let's see an example of a REST API in `api.py`.
+# What's REST. Statelessness
 
-# Creating REST APIs in Flask
+We can authenticate requests in a stateless way, let's take a look at HTTP
+Basic Auth.
 
-## Exercise
+```python
+from flask import request
 
-Create a new endpoint in our API that returns a JSON with all transactions for a
-given user.
+username = request.authorization["username"]
+password = request.authorization["password"]
+```
 
-# Creating REST APIs in Flask
+# What's REST. Statelessness
 
-## Exercise
+On the client side, we can leverage requests to use basicauth too:
 
-Create a endpoint in our API that allows updating a user's shop.
+```python
+from requests.auth import HTTPBasicAuth
+
+response = requests.get(
+    create_url("/users"),
+    auth=HTTPBasicAuth("pepe", "password")
+)
+```
+
+##
+
+Under the hood, basic auth passes user and password encoded in base64 in an
+Authorization header.
+
+# What's REST. Statelessness
+
+## What's the biggest con of stateless sessions? (passing user and pass per request)
+
+. . .
+
+We'll need to query the DB for user authentication on every request.  JWTs try
+to solve this problem, but introduce some other tradeoffs.
+
 
 # Consuming REST APIs with requests
 
-All HTTP methods that we talked about before are represented as function in the
-**`requests`** library.
+All HTTP methods can be used with the **`requests`** library.
 
 ```python
 import requests
@@ -107,10 +132,24 @@ requests.put("http://localhost:8080/users", json={"a": 1})
 requests.delete("http://localhost:8080/users")
 ```
 
-# Consuming REST APIs with requests
+# Creating REST APIs in Flask
 
-Create an endpoint to delete a users's transaction.
-Call the endpoint from client.py
+## Example
+
+Let's go over creating new users in Tweeter together 
+
+# Creating REST APIs in Flask
+
+## Exercise
+
+implement the `GET /users/<username>/tweets` endpoint, that returns a JSON list
+of all tweets by that user.
+
+# Creating REST APIs in Flask
+
+## Exercise
+
+Create a endpoint in our API that allows creating a tweet
 
 # Alternatives to Flask to build REST APIs
 
