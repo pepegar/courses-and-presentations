@@ -106,13 +106,6 @@ masters that rely on programming.  We will:
 
 - Install Anaconda
 
----
-
-# Join the Slack channel!
-
-![](./img/qr.png){height=90%}
-
-
 # Languages
 
 ::: columns
@@ -211,8 +204,7 @@ Let's see how we can use the console to code!
 
 Now we will install the Anaconda platform in our computers.
 
-1. go to
-   [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)
+1. go to [https://www.anaconda.com/download](https://www.anaconda.com/download)
 2. Download Anaconda distribution for your computer.
 
 # Install Anaconda platform
@@ -220,19 +212,6 @@ Now we will install the Anaconda platform in our computers.
 \begin{exampleblock}{Checkpoint}
 Is anybody lost or has problems installing the software?
 \end{exampleblock}
-
-# Install VS Code
-
-1. Go to https://code.visualstudio.com/Download.
-2. Download VS Code for your computer.
-
-# Install VS Code
-
-\begin{exampleblock}{Checkpoint}
-Is anybody lost or has problems installing the software?
-\end{exampleblock}
-
----
 
 # Programs
 
@@ -312,7 +291,7 @@ We use different data structures depending what we want to represent.
 - Strings: text
 - Lists: Twitter's timeline
 - Dictionaries: phonebook, DNS
-- Stacks: undo/redo 
+- Stacks: undo/redo
 ...
 
 # Recap

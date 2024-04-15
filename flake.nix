@@ -8,7 +8,7 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
   };
 
-  outputs = { self, nixpkgs, flake-utils, pre-commit-hooks }:
+  outputs = { self, nixpkgs, flake-utils, pre-commit-hooks, }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -80,6 +80,7 @@
           "app/05-dbs" = buildSlides "app" "05-dbs" system;
           "app/06-rest" = buildSlides "app" "06-rest" system;
           "app/07-dash" = buildSlides "app" "07-dash" system;
+          "app/08-cors" = buildSlides "app" "08-cors" system;
           "presentations/tla/tla-intro" =
             buildSlidesSkippingStyles "presentations/tla" "tla-intro" system;
         };
