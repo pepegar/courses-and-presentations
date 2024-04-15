@@ -8,7 +8,7 @@ email: Pepe García<jgarciah@faculty.ie.edu>
 # Plan for this session
 
 >- Learn a bit about hardware
->- Try the VSCode editor
+>- Try the code editor
 
 # CPU
 
@@ -120,7 +120,7 @@ But **this** Random Access Memory!
 # Recap.  What happens when Spyder runs a file?
 
 \begin{exampleblock}{Whiteboard}
-Let's understand what happens in under the hood of our computer when we run a file in VSCode
+Let's understand what happens in under the hood of our computer when we run a Python file
 \end{exampleblock}
 
 # Review
