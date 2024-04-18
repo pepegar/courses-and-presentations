@@ -26,7 +26,7 @@ print(x)
 
 ## Demo
 
-Let's refresh how we can change the value of a variable in Spyder.
+Let's refresh how we can change the value of a variable in the editor.
 
 # Iteration
 

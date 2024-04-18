@@ -112,7 +112,7 @@ type("patata")
 
 \begin{exampleblock}{Practice}
 
-Inside Spyder, check what's the type of the following expressions:
+Inside the editor, check what's the type of the following expressions:
 
 \begin{itemize}
 \item \textbf{\texttt{"there is some text here"}}
